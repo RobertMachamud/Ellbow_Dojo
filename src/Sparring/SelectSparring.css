@@ -1,0 +1,66 @@
+.select_sparring
+{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	max-height: 100vh;
+	height: 100vh;
+	background: lightblue;
+}
+
+
+.sel_spar_container,
+.select_sparring,
+.sel_spar_slider_container,
+.sel_spar_slider_form
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sel_spar_container
+{
+	width: 600px;
+	height: 700px;
+	border: solid #000;
+	flex-direction: column;
+	border-radius: 10px;
+	box-shadow: ;
+}
+
+.sel_spar_container_head
+{
+	font-size: 2em;
+	font-weight: bolder;
+}
+
+.sel_spar_slider_container
+{
+	height: 450px;
+	width: 400px;
+	border: 2px solid blue;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.sel_spar_slider
+{
+	width: 400px;
+	height: 10px;
+	background: green;
+}
+
+.sel_spar_slider_form
+{
+	flex-direction: column;
+}
+
+.sel_spar_button
+{
+	width: 300px;
+	height: 70px;
+	border-radius: 15px;
+	background: yellow;
+	font-size: 20px;
+}

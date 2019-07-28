@@ -1,0 +1,8 @@
+.main_container
+{
+	position: relative;
+	z-index: 1000;
+	width: 100%;
+	max-height: 100vh;
+	transition: .5s;
+}

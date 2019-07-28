@@ -1,0 +1,45 @@
+.active
+{
+	transform: translateX(300px);
+}
+
+.sidebar
+{
+	position: fixed;
+/*	z-index: -1;*/
+	background: rgba(0,0,0,.7);
+	width: 300px;
+	left: 0;
+	height: 100%;
+/*
+	bottom: 0;
+	top: 0;
+*/
+}
+
+.sidebar_img
+{
+	height: 100px;
+	background: crimson;
+}
+
+.sidebar ul
+{
+	display: flex;
+	flex-direction: column;
+}
+
+.sidebar ul li
+{
+	list-style: none;
+	color: rgba(230, 230, 230, .9);
+	font-size: 1.6em;
+	padding: 20px 30px;
+	cursor: pointer;
+	transition: .3s;
+}
+
+.sidebar ul li:hover
+{
+	color: #fff;
+}
