@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
 // import './Sparring/SelectSparring.css'
-// import SelectSparring from './Select/SelectSparring'
-// import './Sparring/SparringProgramm.css'
-// import SparringProgramm from './Sparring/SparringProgramm'
+// import Profile from './Profile/Profile'
+
+// import Registration from './Registration/Registration'
 import Sparring from './Sparring/Sparring'
 
 import * as serviceWorker from './serviceWorker';

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './Registration.css'
 import Signup from './Signup'
 import './Signup.css'
 import Login from './Login'
@@ -11,12 +10,21 @@ import './Login.css'
 
 
 
+
+
 class Registration extends Component {
+
+  state = {
+    login: true
+  }
+
+
   render() {
     return (
       <div className="registration">
-        <Signup />
-        <Login />
+        {
+          this.state.login === true ? <Login /> : <Signup />
+        }
       </div>
     )
   }

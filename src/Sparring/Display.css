@@ -20,4 +20,5 @@
 	height: 280px;
 	width: 280px;
 	filter: opacity(.8);
+  object-fit: scale-down;
 }

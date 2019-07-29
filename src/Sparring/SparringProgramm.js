@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import './SparringProgramm.css'
 // import SparringData from './SparringData'
 import Display from './Display'
+// import ReactCountdownClock from 'react-countdown-clock'
 
 
 
@@ -9,7 +10,7 @@ class SparringProgramm extends Component {
   //Data
   state = {
     move: '',
-    rounds: 0,
+    rounds: this.props.rounds,
     img: '',
     pause: this.props.pause,
     game: this.props.game,
@@ -39,7 +40,7 @@ class SparringProgramm extends Component {
   componentWillReceiveProps(props) {
     this.setState({
       pause: props.pause,
-      game: props.game,
+      game: props.game
     })
   }
 
@@ -96,7 +97,7 @@ class SparringProgramm extends Component {
     this.play()
   }
 
-  stop = () => {
+  stopSparr = () => {
     this.setState({ running: false })
   }
 
@@ -106,6 +107,18 @@ class SparringProgramm extends Component {
 
   // (this.props.game[0].length + 1) * this.state.gap
 
+
+  // <ReactCountdownClock seconds={this.state.duration}
+  //                color="#ff4b1f"
+  //                alpha={0.9}
+  //                size={200}
+  //                weight={20}
+  //                fontSize="2em"
+  //                font={"sans-serif"}
+  //                 />
+
+
+  // backSparrSelect
 
 
   //Render
@@ -137,7 +150,7 @@ class SparringProgramm extends Component {
   				</button>
 
           <button className="stop">
-  					<div onClick={this.stop} className="stop_p">STOP</div>
+  					<div onClick={this.stopSparr} className="stop_p">STOP</div>
   				</button>
   			</div>
 
