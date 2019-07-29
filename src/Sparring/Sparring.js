@@ -50,7 +50,11 @@ class Sparring extends Component {
       <div className="main_sparring">
         {
           this.state.status === 'select' ?
-           <SelectSparring startSparring={this.startSparring}  /> : <SparringProgramm backSparrSelect={this.backSparrSelect} rounds={this.state.rounds} game={this.state.game} pause={this.state.pause} />
+           <SelectSparring startSparring={this.startSparring}  /> : <SparringProgramm backSparrSelect={this.backSparrSelect}
+                                                                                      rounds={this.state.rounds}
+                                                                                      game={this.state.game}
+                                                                                      pause={this.state.pause}
+                                                                                      duration={this.state.duration} />
         }
       </div>
     )

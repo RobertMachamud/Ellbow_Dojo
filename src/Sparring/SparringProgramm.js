@@ -9,16 +9,15 @@ import ReactCountdownClock from 'react-countdown-clock'
 class SparringProgramm extends Component {
   //Data
   state = {
+    running: false,
     move: '',
-    rounds: this.props.rounds,
     img: '',
-    pause: this.props.pause,
     game: this.props.game,
-    gap: 2000,
-    running: false
-    // ?
-    // pause: this.props.pause,
-    // game: this.props.game
+    rounds: this.props.rounds,
+    duration: this.props.duration,
+    pause: this.props.pause,
+    paused: true,
+    gap: 2000
   }
 
 
@@ -73,6 +72,7 @@ class SparringProgramm extends Component {
 
   play = () => {
     console.log('Start')
+    this.setState({ paused: false })
     // let c = 0
     const st = (c) => {
      if (c < this.props.game.length) {
@@ -82,9 +82,10 @@ class SparringProgramm extends Component {
            rounds: `${c}`
          })
          this.play_round(this.props.game[c - 1], c, this.props.game)
+         this.setState({ duration: this.props.pause })
          setTimeout( () => {
            st(c)   // repeat (condition)
-         }, this.props.pause)
+         }, (this.props.pause * 60) * 1000)
        }, c < 1 ? 2000 : (this.props.game[0].length + 1) * this.state.gap)
      }
     }
@@ -100,6 +101,10 @@ class SparringProgramm extends Component {
   stopSparr = () => {
     this.setState({ running: false })
   }
+
+  // resetTimer = () => {
+  //
+  // }
 
   // componentWillMount() {
   //   this.startSparring()
@@ -139,17 +144,18 @@ class SparringProgramm extends Component {
               <div className="s_data_bx">
                 <div className="s_data_cont">Remaining Rounds:</div>
                 <div className="s_data_cont">Remaining Time:</div>
-                <div className="s_data_cont">Moves:</div>
               </div>
 
             <div className="s_data_data_bx">
-            <ReactCountdownClock seconds={this.state.duration}
+            <ReactCountdownClock seconds={this.state.duration * 60}
                            color="#ff4b1f"
+                           showMilliseconds={false}
                            alpha={0.9}
                            size={200}
                            weight={20}
                            fontSize="2em"
                            font={"sans-serif"}
+                           paused={this.state.paused}
                             />
             </div>
 
