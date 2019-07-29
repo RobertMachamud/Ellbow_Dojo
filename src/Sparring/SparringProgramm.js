@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import './SparringProgramm.css'
 // import SparringData from './SparringData'
 import Display from './Display'
-// import ReactCountdownClock from 'react-countdown-clock'
+import ReactCountdownClock from 'react-countdown-clock'
 
 
 
@@ -118,6 +118,10 @@ class SparringProgramm extends Component {
   //                 />
 
 
+  // <div className="s_data">4</div>
+  // <div className="s_data">1:00</div>
+  // <div className="s_data">65</div>
+
   // backSparrSelect
 
 
@@ -139,9 +143,14 @@ class SparringProgramm extends Component {
               </div>
 
             <div className="s_data_data_bx">
-              <div className="s_data">4</div>
-              <div className="s_data">1:00</div>
-              <div className="s_data">65</div>
+            <ReactCountdownClock seconds={this.state.duration}
+                           color="#ff4b1f"
+                           alpha={0.9}
+                           size={200}
+                           weight={20}
+                           fontSize="2em"
+                           font={"sans-serif"}
+                            />
             </div>
 
   				</div>

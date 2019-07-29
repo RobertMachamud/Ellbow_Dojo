@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import './SparringProgramm.css'
 // import SparringData from './SparringData'
 import Display from './Display'
+// import ReactCountdownClock from 'react-countdown-clock'
 
 
 
@@ -9,10 +10,12 @@ class SparringProgramm extends Component {
   //Data
   state = {
     move: '',
-    round: '',
+    rounds: this.props.rounds,
     img: '',
-    break_time: 3000,
+    pause: this.props.pause,
+    game: this.props.game,
     gap: 2000,
+    running: false
     // ?
     // pause: this.props.pause,
     // game: this.props.game
@@ -30,6 +33,18 @@ class SparringProgramm extends Component {
   // }, 2000)
 
   //Functions
+  componentWillMount() {
+    console.log('sparr_state' ,this.state);
+  }
+
+  componentWillReceiveProps(props) {
+    this.setState({
+      pause: props.pause,
+      game: props.game
+    })
+  }
+
+
   play_round = (round, round_nr, g) => {
     const start = (counter) => {
       console.log('Start 2');
@@ -64,12 +79,12 @@ class SparringProgramm extends Component {
        setTimeout(() => {
          c++
          this.setState({
-           round: `${c}`
+           rounds: `${c}`
          })
          this.play_round(this.props.game[c - 1], c, this.props.game)
          setTimeout( () => {
            st(c)   // repeat (condition)
-         }, this.props.break_time)
+         }, this.props.pause)
        }, c < 1 ? 2000 : (this.props.game[0].length + 1) * this.state.gap)
      }
     }
@@ -78,7 +93,12 @@ class SparringProgramm extends Component {
 
 
   startSparring = () => {
+    this.setState({ running: true })
     this.play()
+  }
+
+  stopSparr = () => {
+    this.setState({ running: false })
   }
 
   // componentWillMount() {
@@ -87,6 +107,18 @@ class SparringProgramm extends Component {
 
   // (this.props.game[0].length + 1) * this.state.gap
 
+
+  // <ReactCountdownClock seconds={this.state.duration}
+  //                color="#ff4b1f"
+  //                alpha={0.9}
+  //                size={200}
+  //                weight={20}
+  //                fontSize="2em"
+  //                font={"sans-serif"}
+  //                 />
+
+
+  // backSparrSelect
 
 
   //Render
@@ -113,8 +145,12 @@ class SparringProgramm extends Component {
             </div>
 
   				</div>
-          <button className="start_stop">
-  					<div onClick={this.startSparring} className="start_stop_p">FIGHT</div>
+          <button className="start">
+  					<div onClick={this.startSparring} className="start_p">FIGHT</div>
+  				</button>
+
+          <button className="stop">
+  					<div onClick={this.stopSparr} className="stop_p">STOP</div>
   				</button>
   			</div>
 
