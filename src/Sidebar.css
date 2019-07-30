@@ -7,7 +7,7 @@
 {
 	position: fixed;
 /*	z-index: -1;*/
-	background: rgba(0,0,0,.7);
+	background: rgba(0,0,0,.8);
 	width: 300px;
 	left: 0;
 	height: 100%;
@@ -20,13 +20,15 @@
 .sidebar_img
 {
 	height: 100px;
-	background: crimson;
+	background: purple;
 }
 
 .sidebar ul
 {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+	height: 360px;
 }
 
 .sidebar ul li
@@ -42,4 +44,5 @@
 .sidebar ul li:hover
 {
 	color: #fff;
+	transform: scale(1.05);
 }

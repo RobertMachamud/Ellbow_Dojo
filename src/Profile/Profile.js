@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './Profile.css'
 import '@fortawesome/fontawesome-free/css/all.css'
+import axios from 'axios'
 
 
 class Profile extends Component {
@@ -21,8 +22,14 @@ class Profile extends Component {
 
 
   //Functions
-  
-
+  componentWillMount() {
+    axios.get('http://localhost:5000/api/profile' ,
+    {headers: {
+					Authorization: `Bearer ${localStorage.getItem('token')}`
+				}}).then( (res) => {
+          console.log(res);
+        })
+  }
 
 
   // NAME

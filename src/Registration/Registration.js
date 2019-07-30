@@ -15,7 +15,7 @@ import './Login.css'
 class Registration extends Component {
 
   state = {
-    login: true
+    login: false
   }
 
 

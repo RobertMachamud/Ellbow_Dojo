@@ -71,7 +71,7 @@ body
 	position: absolute;
 	transform-origin: left;
 	background: #fff;
-	transition: .8s;
+	transition: .3s;
 	height: 0%;
 	width: 0%;
 }
@@ -92,7 +92,7 @@ body
 	position: absolute;
 	transform-origin: right;
 	background: #fff;
-	transition: .9s;
+	transition: .3s;
 	height: 0%;
 	width: 0%;
 }
@@ -147,8 +147,6 @@ body
 	bottom: 0;
 	right: 0;
 	z-index: 50;
-/*	border: 2px solid blue;*/
-/*	*/
 	width: 90%;
 	height: 75%;
 	border-radius: 10px;
@@ -289,7 +287,8 @@ body
 {
 	margin-left: 10px;
 	font-size: 20px;
-	color: deeppink;
+	/* color: deeppink; */
+  color: purple;
 }
 
 /*Bottom*/
@@ -313,8 +312,6 @@ body
 {
 	width: 85%;
 	height: 100%;
-/*	border: 1px solid green;*/
-/*	*/
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -322,10 +319,6 @@ body
 
 .info_bottom
 {
-/*	border: 1px solid yellow;*/
-/*	*/
-/*	background: yellow;*/
-
 	font-size: 14px;
 	color: ;
 }

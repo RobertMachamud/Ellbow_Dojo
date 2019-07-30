@@ -7,6 +7,9 @@
 	padding: 20px;
 	cursor: pointer;
 	z-index: 10001;
+	position: absolute;
+	top: 0%;
+	left: 0%;
 }
 
 .circle

@@ -1,0 +1,195 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+.signup
+{
+	min-height: 100vh;
+	background: url(https://res.cloudinary.com/dxcrd5sos/image/upload/v1564261773/robert_head_2_Kopie_fcz13o.png) no-repeat center;
+	background-size: cover;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.inputs
+{
+	height: 50px;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid black;
+	font-size: 26px;
+}
+
+.signup_logo,
+.signup_dont_have_account,
+.gender,
+.gender_box,
+.signup_box,
+.signup_signup_box,
+.signup_box_cont
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.signup_card
+{
+	border: 1px solid black;
+	border-radius: 30px;
+	height: 650px;
+	width: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	padding: 0px 20px 10px 20px;
+	position: relative;
+	background: #fafafa;
+/*	box-sizing: border-box;*/
+}
+
+.signup_header
+{
+	font-size: 1.8em;
+}
+
+.signup_logo
+{
+	position: relative;
+	height: 300px;
+	width: 400px;
+	border-radius: 30px 30px 0 0;
+	border: .5px solid blue;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+
+.gender_box
+{
+	width: 400px;
+	height: 150px;
+	justify-content: space-around;
+}
+
+.gender
+{
+	width: 120px;
+	height: 120px;
+	border: 1px solid green;
+	border-radius: 30px;
+	cursor: pointer;
+}
+
+.male
+{
+	background: url(https://res.cloudinary.com/dxcrd5sos/image/upload/v1564264100/kisspng-gender-symbol-computer-icons-male-facepalm-5b499dda966909.0917024415315511946161_ovzdew.png) no-repeat center;
+	background-size: cover;
+	box-shadow: ;
+}
+
+.female
+{
+	background: url(https://res.cloudinary.com/dxcrd5sos/image/upload/v1564264091/kisspng-gender-symbol-female-woman-female-white-collar-5aed9d54df4cb7.3872196115255217489146_idg90z.png) no-repeat center;
+	background-size: cover;
+	box-shadow: ;
+}
+
+
+.signup_card::before
+{
+	content: '';
+	position: absolute;
+	top: 0%;
+	height: 300px;
+	width: 100%;
+	border-radius: 30px 30px 0 0;
+	box-shadow: ;
+	background: purple;
+}
+
+.signup_signup_box
+{
+	border: .5px solid blue;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 120px;
+}
+
+.inputs
+{
+	height: 50px;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid black;
+	font-size: 26px;
+/*	padding-left: 5px;*/
+/*	text-align: center;*/
+}
+
+.inputs::placeholder
+{
+	color: rgba(0,0,0,.7);
+}
+
+.signup_button
+{
+	height: 53px;
+	width: 350px;
+	border-radius: 30px;
+	font-size: 18px;
+	font-weight: bolder;
+	color: #fff;
+	background: purple;
+	box-shadow: ;
+}
+
+
+.signup_signup_box
+{
+	width: 400px;
+	border: 1px solid blue;
+	height: 230px;
+
+}
+
+
+signup_box_head
+{
+
+}
+
+.signup_box
+{
+	width: 350px;
+	height: 410px;
+	font-size: 1.6em;
+	border: 1px solid black;
+	padding: 10px;
+	border-radius: 30px;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+
+.signup_box_cont
+{
+	flex-direction: column;
+	width: 80%;
+	height: 280px;
+	border: 1px solid blue;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+
+.signup_box input
+{
+	width: 100%;
+}

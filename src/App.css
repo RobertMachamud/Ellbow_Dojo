@@ -6,121 +6,10 @@
 	overflow-x: hidden;
 }
 
-#b_wrapper
-{
-	display: inline-block;
-	border-radius: 50%;
-	margin: 10px;
-	position: relative;
-	padding: 20px;
-	cursor: pointer;
-	z-index: 10001;
-}
-
-.circle
-{
-	width: 40px;
-	height: 40px;
-	position: relative;
-
-}
-
-.line
-{
-	position: absolute;
-	height: 5px;
-	width: 100%;
-/*	background: #151719;*/
-	background: #fff;
-	border-radius: 5px;
-	transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.65s;
-}
-
-.top
-{
-	top: 10%;
-}
-.middle
-{
-	top: 40%;
-}
-.bottom
-{
-	top: 70%;
-}
-
-
-.icon.close .top
-{
-	transform: rotate(45deg);
-	top: 48%;
-}
-
-.icon.close .middle,
-.icon.close .bottom
-{
-	transform: rotate(-45deg);
-	top: 48%;
-}
-
-
-
-
-
-
-/*SIDEBAR*/
-.active
-{
-	transform: translateX(300px);
-}
-
-.sidebar
-{
-	position: fixed;
-/*	z-index: -1;*/
-	background: rgba(0,0,0,.7);
-	width: 300px;
-	left: 0;
-	height: 100%;
-/*
-	bottom: 0;
-	top: 0;
-*/
-}
-
-.sidebar_img
-{
-	height: 100px;
-	background: crimson;
-}
-
-.sidebar ul
-{
-	display: flex;
-	flex-direction: column;
-}
-
-.sidebar ul li
-{
-	list-style: none;
-	color: rgba(230, 230, 230, .9);
-	font-size: 1.6em;
-	padding: 20px 30px;
-	cursor: pointer;
-	transition: .3s;
-}
-
-.sidebar ul li:hover
-{
-	color: #fff;
-}
-
 
 /*MAIN-CONTAINER*/
 .main_container
 {
-	background: lightblue;
-/*	display: grid;*/
 	position: relative;
 	z-index: 1000;
 	width: 100%;
@@ -133,26 +22,6 @@
 .pic_slider
 {
 	height: 100vh;
-	background: url('https://res.cloudinary.com/dxcrd5sos/image/upload/v1563528427/muay-thai-ong-bak-tony-jaa-1920x1080-89355_soeyl0.jpg');
-}
-
-
-.main_options
-{
-	height: 20vh;
-	position: relative;
-	z-index: 20000;
-	background: transparent;
-	box-sizing: border-box;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.opt_boxes
-{
-	display: flex;
-	width: 64.5%;
-	background: red;
-	height: 100%;
+	background: url('https://res.cloudinary.com/dxcrd5sos/image/upload/v1564253908/robert_header_Kopie_btlfad.png') no-repeat center;
+	background-size: cover;
 }

@@ -44,6 +44,14 @@ class SparringProgramm extends Component {
     })
   }
 
+  //
+  // addToProfile = (rounds_game, moves_game) => {
+  //   let total_rounds_game = rounds_game
+  //   let total_moves_game = moves_game
+  //
+  //   // ? adding to user -
+  // }
+
 
   onComplete = () => {
     this.setState({ timer: this.state.timer + 1 })
