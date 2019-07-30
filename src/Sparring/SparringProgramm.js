@@ -77,6 +77,8 @@ class SparringProgramm extends Component {
        setTimeout( () => {
          console.log('pause')
          this.setState({
+           img: 'https://res.cloudinary.com/dxcrd5sos/image/upload/v1564463719/o1JXDjmW_400x400_kpmjlo.jpg',
+           move: '',
            duration: this.state.pause + 0.0000000001
          })
          console.log(this.state.duration);
@@ -105,6 +107,9 @@ class SparringProgramm extends Component {
          this.setState({
            rounds: `${c}`
          })
+         // this.setState({
+         //   duration: this.props.duration + 0.0000000001
+         // })
          this.play_round(this.props.game[c - 1], c, this.props.game)
          setTimeout( () => {
            st(c)   // repeat (condition)
