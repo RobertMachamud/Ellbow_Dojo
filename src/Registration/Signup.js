@@ -52,7 +52,8 @@ class Signup extends Component {
 			</div>
 
 			<div className="signup_signup_box">
-				<input placeholder="Your Full Name" className="inputs" type="text" />
+				<input placeholder="Your First Name" className="inputs" type="text" />
+        <input placeholder="Your Last Name" className="inputs" type="text" />
 				<input placeholder="Your Email" className="inputs" type="text" />
 				<input placeholder="Your Password" className="inputs" type="password" />
 			</div>
