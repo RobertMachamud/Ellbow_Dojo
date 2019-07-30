@@ -12,8 +12,6 @@ class Signup extends Component {
     age: '',
     height: '',
     weight: '',
-    total_rounds: 0,
-    total_moves: 0,
     profile_pic: ''
   }
 

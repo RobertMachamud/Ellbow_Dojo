@@ -17,8 +17,10 @@
 .move_img
 {
 	border-radius: 30px;
-	height: 280px;
-	width: 280px;
+	height: 270px;
+	width: 270px;
+  /* height: 100%;
+	width: 100%; */
 	filter: opacity(.8);
   object-fit: scale-down;
 }
