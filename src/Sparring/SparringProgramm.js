@@ -49,12 +49,22 @@ class SparringProgramm extends Component {
     this.setState({ timer: this.state.timer + 1 })
   }
 
+  // onComplete = () => {
+  //   this.setState({ timer: this.state.timer + 1 },
+  //     () => console.log(this.state.timer)
+  //   )
+  // }
+
   play_round = (round, round_nr, g) => {
     const start = (counter) => {
       console.log('Start 2');
      if (counter < round.length) {
        setTimeout(() => {
          counter++
+         this.setState({
+           paused: false,
+           duration: this.state.duration + 0.0000000001
+         })
          this.setState({
            move: `${round[counter - 1].name}`,
            img: `${round[counter - 1].img}`
@@ -66,7 +76,7 @@ class SparringProgramm extends Component {
        setTimeout( () => {
          console.log('pause')
          this.setState({
-           duration: this.state.pause * 60
+           duration: this.state.pause + 0.0000000001
          })
          console.log(this.state.duration);
        }, 1000)
@@ -81,11 +91,15 @@ class SparringProgramm extends Component {
 
   play = () => {
     console.log('Start')
-    this.setState({ paused: false })
+
     // let c = 0
     const st = (c) => {
      if (c < this.props.game.length) {
        setTimeout(() => {
+         // this.setState({
+         //   paused: false,
+         //   duration: this.state.duration
+         // })
          c++
          this.setState({
            rounds: `${c}`
