@@ -60,7 +60,7 @@ class SparringProgramm extends Component {
       console.log('Start 2');
       this.setState({
         paused: false,
-        duration: this.state.duration // + 0.0000000001
+        duration: this.props.duration // + 0.0000000001
       })
      if (counter < round.length) {
        setTimeout(() => {
