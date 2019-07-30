@@ -17,7 +17,8 @@ class SparringProgramm extends Component {
     duration: this.props.duration,
     pause: this.props.pause,
     paused: true,
-    gap: 2000
+    gap: 2000,
+    timer: 0
   }
 
 
@@ -44,6 +45,10 @@ class SparringProgramm extends Component {
   }
 
 
+  onComplete = () => {
+    this.setState({ timer: this.state.timer + 1 })
+  }
+
   play_round = (round, round_nr, g) => {
     const start = (counter) => {
       console.log('Start 2');
@@ -60,6 +65,10 @@ class SparringProgramm extends Component {
      if (counter === round.length && round_nr !== g.length) {
        setTimeout( () => {
          console.log('pause')
+         this.setState({
+           duration: this.state.pause * 60
+         })
+         console.log(this.state.duration);
        }, 1000)
      } else if (counter === round.length && round_nr === g.length) {
        setTimeout( () => {
@@ -82,7 +91,6 @@ class SparringProgramm extends Component {
            rounds: `${c}`
          })
          this.play_round(this.props.game[c - 1], c, this.props.game)
-         this.setState({ duration: this.props.pause })
          setTimeout( () => {
            st(c)   // repeat (condition)
          }, (this.props.pause * 60) * 1000)
@@ -156,6 +164,7 @@ class SparringProgramm extends Component {
                            fontSize="2em"
                            font={"sans-serif"}
                            paused={this.state.paused}
+                           onComplete={this.onComplete}
                             />
             </div>
 
