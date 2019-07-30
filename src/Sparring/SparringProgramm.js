@@ -58,13 +58,14 @@ class SparringProgramm extends Component {
   play_round = (round, round_nr, g) => {
     const start = (counter) => {
       console.log('Start 2');
+      this.setState({
+        paused: false,
+        duration: this.state.duration // + 0.0000000001
+      })
      if (counter < round.length) {
        setTimeout(() => {
          counter++
-         this.setState({
-           paused: false,
-           duration: this.state.duration + 0.0000000001
-         })
+         //
          this.setState({
            move: `${round[counter - 1].name}`,
            img: `${round[counter - 1].img}`
