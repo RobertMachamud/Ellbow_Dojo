@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './ProfileChange.css'
 import '@fortawesome/fontawesome-free/css/all.css'
+import Sidebar from '../Sidebar'
+import Burger from '../Burger'
 import axios from 'axios'
 
 
@@ -16,6 +18,7 @@ class ProfileChange extends Component {
   //   weight: props.weight
   // }
   state = {
+    open: false,
     f_name:  '',
     l_name:  '',
     gender:  '',
@@ -29,6 +32,20 @@ class ProfileChange extends Component {
   componentWillMount() {
     this.getData()
       }
+
+  slide = () => {
+    if (this.state.open) {
+      console.log('it is open');
+      this.setState({
+        open: false
+      })
+    } else {
+      console.log('it is not open');
+      this.setState({
+        open: true
+      })
+    }
+  }
 
   getData = () => {
     axios.get('http://localhost:5000/api/profile' ,
@@ -80,7 +97,12 @@ class ProfileChange extends Component {
     return (
       <div className="profile_change">
 
-		<form className="profile_change_slider">
+      <Sidebar />
+
+		<form onSubmit={(e) => this.changeData} className={this.state.open ? 'profile_change_slider active' : 'profile_change_slider'}>
+
+      <Burger slide={this.slide} open={this.state.open}/>
+
 			<div className="change_profile_card">
 				<div className="ch_pr_left">
 					<div className="ch_pr_left_wrapper">
