@@ -1,0 +1,224 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-family: sans-serif;
+}
+
+.rest_input_bx,
+.rest_input_box_box,
+.name_input_box,
+.ch_pr_r_button_bx,
+.set_back_button
+{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.profile_change
+{
+	height: 100vh;
+  width: 100%;
+}
+
+.profile_change_slider
+{
+	position: relative;
+	z-index: 100;
+	width: 100%;
+	height: 100vh;
+	transition: .5s;
+  background: url(https://res.cloudinary.com/dxcrd5sos/image/upload/v1564253908/robert_header_Kopie_btlfad.png) no-repeat center;
+  background-size: cover;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.active
+{
+	transform: translateX(300px);
+}
+
+
+.change_profile_card
+{
+	border-radius: 30px;
+	width: 1200px;
+	height: 450px;
+	display: grid;
+	grid-template-columns: 3fr 8fr;
+	box-shadow: 0px 14px 80px 0px rgba(0,0,0,.1);
+}
+
+.ch_pr_left
+{
+	border-radius: 30px 0 0 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+/*	background: linear-gradient(to right, #4A00E0, #0575E6);*/
+	position: relative;
+}
+
+.ch_pr_left::before
+{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 30px 0 0 30px;
+	background: #8E2DE2;
+	background: linear-gradient(to right, #4A00E0, #8E2DE2);
+	filter: opacity(.8);
+	z-index: -1;
+}
+
+/*
+.ch_logo
+{
+	border: 1px solid blue;
+	width: 80px;
+	height: 80px;
+}
+*/
+
+.ch_pr_left_wrapper
+{
+	height: 380px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.ch_pic
+{
+	height: 330px;
+	width: 250px;
+	border-radius: 30px;
+	background: url(https://res.cloudinary.com/dxcrd5sos/image/upload/v1563806473/real-2697954_1280_z1rthq.jpg) no-repeat 75%;
+	background-size: cover;
+}
+
+.ch_pr_left_cont
+{
+	font-size: smaller;
+}
+
+.ch_pr_pic_button
+{
+	padding: 10px 40px;
+	border-radius: 30px;
+	color: ;
+	font-size: ;
+	font-weight: ;
+	background: #fafafa;
+	cursor: pointer;
+	box-shadow: 0px 14px 80px 0px rgba(0, 0, 0, 0.3);
+	transform: translateY(13px);
+}
+.ch_pr_pic_button:hover
+{
+	color: ;
+	box-shadow: ;
+}
+
+
+.ch_pr_right
+{
+	display: grid;
+	grid-template-rows: 2fr 2fr 1fr;
+/*	background: blue;*/
+}
+
+.name_input_box
+{
+/*	border: 1px dotted green;*/
+/*	background: blue;*/
+	align-items: flex-end;
+	border-top-right-radius: 30px;
+
+}
+
+
+.rest_input_bx
+{
+/*	border: 1px dotted green;*/
+	box-sizing: border-box;
+
+}
+
+.rest_input_box_box
+{
+/*	background: yellow;*/
+	flex-wrap: wrap;
+}
+
+.ch_pr_r_button_bx
+{
+/*	border: 1px dotted green;*/
+/*	background: red;*/
+	border-bottom-right-radius: 30px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+
+.save_changes_button
+{
+	height: 53px;
+	width: 250px;
+	border-radius: 30px;
+	font-size: 18px;
+	font-weight: bolder;
+	color: #fff;
+	background: linear-gradient(to right, #4A00E0, #9D6289);
+	box-shadow: 0px 14px 80px 0px rgba(0, 0, 0, 0.3);
+	border: none;
+  cursor: pointer;
+	margin-right: 35px;
+	box-shadow: 0px 14px 80px 0px rgba(0, 0, 0, 0.3);
+}
+
+
+.ch_input
+{
+/*	box-sizing: border-box;*/
+	padding-left: 5px;
+	width: 380px;
+	height: 45px;
+	outline: none;
+	border-radius: 10px;
+	border: none;
+	font-size: 20px;
+	margin: 10px;
+	box-shadow: 0px 14px 80px 0px rgba(0, 0, 0, 0.3);
+}
+.g_select
+{
+	color: rgba(0,0,0,.6);
+	border-radius: 30px;
+	font-size: 20px;
+}
+
+.set_back_button
+{
+  height: 53px;
+  width: 250px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bolder;
+  color: #fff;
+  background: linear-gradient(to right, #4A00E0, #9D6289);
+  box-shadow: 0px 14px 80px 0px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  margin-right: 35px;
+  box-shadow: 0px 14px 80px 0px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
