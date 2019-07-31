@@ -2,8 +2,8 @@ body
 {
 	margin: 0;
 	padding: 0;
-	max-height: 100vh;
 	font-family: sans-serif;
+  overflow: hidden;
 }
 
 
@@ -12,12 +12,27 @@ body
 	padding-left: 50px;
 }
 
+.profile_slider
+{
+  /* position: relative; */
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  transition: .5s;
+  background: url(https://res.cloudinary.com/dxcrd5sos/image/upload/v1564253908/robert_header_Kopie_btlfad.png);
+  display: flex;
+  align-items: center;
+}
+.active
+{
+	transform: translateX(300px);
+}
+
 .profile_main_container
 {
 	display: flex;
 	align-items: center;
 	height: 100vh;
-	background: url(https://res.cloudinary.com/dxcrd5sos/image/upload/v1564253908/robert_header_Kopie_btlfad.png);
 }
 
 .profile_container
@@ -169,7 +184,7 @@ body
 
 /*Info*/
 /*Circle*/
-.circle_container
+.d_circle_container
 {
 	position: absolute;
 /*	left: 35%;*/
@@ -184,7 +199,7 @@ body
 	flex-direction: column;
 }
 
-.circle
+.d_circle
 {
 	width: 30px;
 	height: 30px;
@@ -201,7 +216,7 @@ body
 	position: relative;
 	cursor: pointer;
 }
-.circle::before
+.d_circle::before
 {
 	content: '';
 	position: absolute;
@@ -209,17 +224,17 @@ body
 	width: 0%;
 	z-index: 200;
 	transition: .5s;
-	background: lightblue;
+	background: purple;
 	opacity: .8;
 	border-radius: 50%;
 }
 
-.circle:hover
+.d_circle:hover
 {
 	color: #fff;
 }
 
-.circle:hover.circle::before
+.d_circle:hover.d_circle::before
 {
 	height: 100%;
 	width: 100%;
@@ -230,7 +245,7 @@ body
 	z-index: 300;
 }
 
-.circle_container::before
+.d_circle_container::before
 {
 	content: '';
 	position: absolute;
@@ -245,8 +260,6 @@ body
 {
 	position: absolute;
 	left: 45%;
-/*	border: solid 1px black;*/
-/*	*/
 	height: 58%;
 	width: 200px;
 	display: flex;
