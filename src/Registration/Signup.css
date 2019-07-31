@@ -154,16 +154,24 @@ body
 	background: transparent;
 	border: none;
 	border-bottom: 1px solid black;
-	font-size: 26px;
+	font-size: 20px;
+  font-weight: 300;
 	z-index: 100;
-/*	padding-left: 5px;*/
-/*	text-align: center;*/
+  box-sizing: border-box;
+  /* position: relative; */
 }
 
 .inputs::placeholder
 {
 	color: rgba(0,0,0,.7);
+  font-weight: 400;
 }
+.inputs:focus
+{
+  outline: none;
+  border-bottom: 2px solid purple;
+}
+
 
 .signup_button
 {
