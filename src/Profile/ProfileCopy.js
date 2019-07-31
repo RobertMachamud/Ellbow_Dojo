@@ -13,8 +13,8 @@ class Profile extends Component {
     totoal_moves: 0,
     total_ellbows: 0,
     user: {
-      f_name: 'Please',
-      l_name: 'Login',
+      f_name: '',
+      l_name: '',
       gender: '?',
       age: 0,
       height: 0,
