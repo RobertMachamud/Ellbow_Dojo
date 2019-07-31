@@ -8,7 +8,8 @@ class Signup extends Component {
   //Data
   state = {
     open: false,
-    name: '',
+    f_name: '',
+    l_name: '',
     email: '',
     password: '',
     gender: '',
@@ -35,6 +36,41 @@ class Signup extends Component {
 	}
 
 
+  changeInput = (e, x) => {
+    this.setState({
+      x: e.target.value
+    })
+  }
+  changeAge = (e) => {
+    this.setState({ age: e.target.value })
+  }
+
+  changeHeight = (e) => {
+    this.setState({ height: e.target.value })
+  }
+
+  changeWeight = (e) => {
+    this.setState({ weight: e.target.value })
+  }
+
+  changeFName = (e) => {
+    this.setState({ f_name: e.target.value })
+  }
+
+  changeLName = (e) => {
+    this.setState({ l_name: e.target.value })
+  }
+
+  changeEmail = (e) => {
+    this.setState({ email: e.target.value })
+  }
+
+  changePassword = (e) => {
+    this.setState({ password: e.target.value })
+  }
+
+
+
   signup = (e) => {
     e.preventDefault()
     axios.post('http://localhost:5000/api/signup', this.state).then( (res) => {
@@ -52,7 +88,7 @@ class Signup extends Component {
 
         <Sidebar />
 
-        <form className={this.state.open ? 'signup_slider active' : 'signup_slider'}>
+        <form onSubmit={(e) => this.signup(e)} className={this.state.open ? 'signup_slider active' : 'signup_slider'}>
         <div className="white_background">
 
         <Burger slide={this.slide} open={this.state.open}/>
@@ -60,9 +96,9 @@ class Signup extends Component {
     		<div className="signup_box">
     		<div className="signup_box_head">Additional Info</div>
     			<div className="signup_box_cont">
-    				<input placeholder="Your Age" className="inputs" type="text" />
-            <input placeholder="Your Height" className="inputs" type="text" />
-            <input placeholder="Your Weight" className="inputs" type="text" />
+    				<input placeholder="Your Age"  className="inputs" type="number" min="1" max="100" title="1 - 100 please" value={this.state.age} onChange={(e) => this.changeAge(e)} />
+            <input placeholder="Your Height" className="inputs" type="number" min="1" max="200" title="in cm" value={this.state.height} onChange={(e) => this.changeHeight(e)} />
+            <input placeholder="Your Weight" className="inputs" type="number" min="1" max="250" title="in kg" value={this.state.weight} onChange={(e) => this.changeWeight(e)} />
     			</div>
     		</div>
 
@@ -76,15 +112,16 @@ class Signup extends Component {
     				</div>
     			</div>
 
-    				<input placeholder="Your First Name" className="inputs" type="text" />
-            <input placeholder="Your Last Name" className="inputs" type="text" />
-    				<input placeholder="Your Email" className="inputs" type="text" />
-    				<input placeholder="Your Password" className="inputs" type="password" />
+    				<input placeholder="Your First Name" className="inputs" type="text" value={this.state.f_name} onChange={(e) => this.changeFName(e)} />
+            <input placeholder="Your Last Name" className="inputs" type="text" value={this.state.l_name} onChange={(e) => this.changeLName(e)} />
+    				<input placeholder="Your Email" className="inputs" type="text" value={this.state.email} onChange={(e) => this.changeEmail(e)} />
+    				<input placeholder="Your Password" className="inputs" type="password" value={this.state.password} onChange={(e) => this.changePassword(e)} />
 
-    			<button className="signup_button">Sign up</button>
+    			<button type="submit" className="signup_button">Sign up</button>
 
   		</div>
       </div>
+      <button onClick={this.props.changeToLogin} className="to_login">Back to Login</button>
   	</form>
   </div>
     )
