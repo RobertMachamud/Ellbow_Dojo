@@ -29,12 +29,9 @@ class Profile extends Component {
     {headers: {
 					Authorization: `Bearer ${localStorage.getItem('token')}`
 				}}).then( (res) => {
-          console.log(res);
           this.setState({
             user: res.data,
             bmi: parseFloat((res.data.weight / ((res.data.height / 100) * 2)).toFixed(1))
-          }, () => {
-            console.log('state', this.state);
           })
         })
       }
@@ -127,7 +124,7 @@ class Profile extends Component {
 
 				<div className="circle_container">
 					<div className="circle gender_c">
-						<i className="fas fa-venus"></i>
+						<i className={this.state.user.gender === 'male' ? 'fas fa-mars' : 'fas fa-venus'}></i>
 					</div>
 					<div className="circle age_c">
 					<i className="fas fa-birthday-cake"></i>
@@ -155,8 +152,8 @@ class Profile extends Component {
         <div className="info_info_data_container">
           <div className="data_a">{this.state.user.gender}</div>
           <div className="data_a">{this.state.user.age}</div>
-          <div className="data_a">{this.state.user.height}cm</div>
-          <div className="data_a">{this.state.user.weight}kg</div>
+          <div className="data_a">{this.state.user.height} cm</div>
+          <div className="data_a">{this.state.user.weight} kg</div>
           <div className="data_a">{this.state.bmi}</div>
         </div>
 
