@@ -36,11 +36,13 @@ class Signup extends Component {
 	}
 
 
-  changeInput = (e, x) => {
-    this.setState({
-      x: e.target.value
-    })
-  }
+  // changeInput = (e, x) => {
+  //   this.setState({
+  //     x: e.target.value
+  //   })
+  // }
+
+  // Change inputs
   changeAge = (e) => {
     this.setState({ age: e.target.value })
   }
@@ -69,8 +71,19 @@ class Signup extends Component {
     this.setState({ password: e.target.value })
   }
 
+  // Gender
+  changeToMale = (e) => {
+    this.setState({ gender: 'male' })
+    // console.log(this.state.gender);
+  }
+
+  changeToFemale = () => {
+    this.setState({ gender: 'female' })
+      // console.log(this.state.gender);
+  }
 
 
+  // Signup
   signup = (e) => {
     e.preventDefault()
     axios.post('http://localhost:5000/api/signup', this.state).then( (res) => {
@@ -107,8 +120,8 @@ class Signup extends Component {
     			<div className="signup_logo">
     				<h2 className="signup_header">Sign up</h2>
     				<div className="gender_box">
-    					<div className="gender male"></div>
-    					<div className="gender female"></div>
+    					<div onClick={this.changeToMale} className="gender male"></div>
+    					<div onClick={this.changeToFemale} className="gender female"></div>
     				</div>
     			</div>
 

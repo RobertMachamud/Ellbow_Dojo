@@ -15,7 +15,7 @@ import './Login.css'
 class Registration extends Component {
   //Data
   state = {
-    login: false
+    login: true
   }
 
 
