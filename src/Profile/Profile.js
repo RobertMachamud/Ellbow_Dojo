@@ -134,6 +134,7 @@ class Profile extends Component {
   			</div>
   		</div>
   	</div>
+    <div title="go to Change Profile" class="to_change_profile"></div>
   </div>
 </div>
 

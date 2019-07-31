@@ -344,3 +344,21 @@ body
 	margin-right: 10px;
 	color: rgba(0,0,0,.8);
 }
+
+.to_change_profile
+{
+  z-index: 2000;
+  width: 30px;
+  height: 30px;
+  background: url(https://res.cloudinary.com/dxcrd5sos/image/upload/v1564592875/cogwheel_icon-icons.com_70237_i9a23m.png) no-repeat center;
+  background-size: cover;
+  position: absolute;
+  bottom: 16.5%;
+  left: 18%;
+  cursor: pointer;
+  transition: .5s;
+}
+.to_change_profile:hover
+{
+  transform: scale(1.15);
+}
