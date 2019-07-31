@@ -4,6 +4,8 @@ import axios from 'axios'
 import Burger from '../Burger'
 import Sidebar from '../Sidebar'
 
+
+
 class Signup extends Component {
   //Data
   state = {
@@ -84,13 +86,25 @@ class Signup extends Component {
 
 
   // Signup
+  // signup = (e) => {
+  //   e.preventDefault()
+  //   axios.post('http://localhost:5000/api/signup', this.state).then( (res) => {
+  //     localStorage.setItem('token', res.data.token)
+  //     this.props.auth()
+  //   }).catch( (err) => {
+  //     console.log('Signup_Err', err);
+  //   })
+  // }
+
   signup = (e) => {
     e.preventDefault()
     axios.post('http://localhost:5000/api/signup', this.state).then( (res) => {
+      console.log(this.state)
+      console.log('>>>>>>>>>>>>>>>>>>',res.data.token);
       localStorage.setItem('token', res.data.token)
-      this.props.auth()
+      // this.props.auth()
     }).catch( (err) => {
-      console.log('Signup_Err', err);
+      console.log('Signup_Err', err)
     })
   }
 

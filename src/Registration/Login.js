@@ -55,7 +55,7 @@ class Login extends Component {
           error: ''
         })
         localStorage.setItem('token', res.data.token)
-        this.props.auth()
+        // this.props.auth()
       }
     }).catch( (err) => {
       console.log('Login_Err', err)

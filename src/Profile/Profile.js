@@ -54,6 +54,33 @@ class Profile extends Component {
   //   <div className="info_bottom"><span className="info_b_data">{this.state.total_ellbows}</span>Total Ellbows</div>
   //   </div>
 
+  // NAME HARD CODE
+  // <div className="name_container">
+  //   <span className="f_name">Karen</span> <br />
+  //   <span className="l_name">Hammersmith</span>
+  // </div>
+
+
+  // DATE HARD CODE
+  // <div className="info_info_data_container">
+  //   <div className="data_a">FEMALE</div>
+  //   <div className="data_a">52</div>
+  //   <div className="data_a">175cm</div>
+  //   <div className="data_a">65kg</div>
+  //   <div className="data_a">0,02</div>
+  // </div>
+  //
+
+
+  // BOTTOM HARD CODE
+  // <div className="info_bottom_container">
+  // <div className="info_bottom_sub">
+  //   <div className="info_bottom"><span className="info_b_data">50</span>Total Rounds</div>
+  //   <div className="info_bottom"><span className="info_b_data">150</span>Total Moves</div>
+  //   <div className="info_bottom"><span className="info_b_data">7</span>Total Ellbows</div>
+  //   </div>
+  // </div>
+
 
 
   render() {

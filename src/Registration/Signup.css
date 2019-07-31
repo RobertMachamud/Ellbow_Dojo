@@ -109,6 +109,10 @@ body
 	background: url(https://res.cloudinary.com/dxcrd5sos/image/upload/v1564264100/kisspng-gender-symbol-computer-icons-male-facepalm-5b499dda966909.0917024415315511946161_ovzdew.png) no-repeat center;
 	background-size: cover;
 }
+.g_selected
+{
+  transform: scale();
+}
 
 
 .female

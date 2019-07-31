@@ -15,11 +15,27 @@ import './Login.css'
 class Registration extends Component {
   //Data
   state = {
-    login: true
+    login: false
   }
 
 
   //Functions
+  checkAuth = () => {
+		if (localStorage.getItem('token')) {
+			return true
+		} else {
+			return false
+		}
+	}
+
+
+	auth = () => {
+		if (this.checkAuth()) {
+			window.location.href = '/'
+		}
+	}
+
+
   changeToSignup = () => {
     this.setState({ login: false })
   }
@@ -34,7 +50,7 @@ class Registration extends Component {
       <div className="registration">
         {
           this.state.login === true ? <Login changeToSignup={this.changeToSignup} /> :
-                                      <Signup changeToLogin={this.changeToLogin} />
+                                      <Signup changeToLogin={this.changeToLogin} auth={this.auth} />
         }
       </div>
     )
