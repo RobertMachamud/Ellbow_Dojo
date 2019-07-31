@@ -20,20 +20,21 @@ class Registration extends Component {
 
 
   //Functions
-  checkAuth = () => {
-		if (localStorage.getItem('token')) {
-			return true
-		} else {
-			return false
-		}
-	}
 
-
-	auth = () => {
-		if (this.checkAuth()) {
-			window.location.href = '/'
-		}
-	}
+  // for redirecting
+  // checkAuth = () => {
+	// 	if (localStorage.getItem('token')) {
+	// 		return true
+	// 	} else {
+	// 		return false
+	// 	}
+	// }
+  // 
+	// auth = () => {
+	// 	if (this.checkAuth()) {
+	// 		window.location.href = '/'
+	// 	}
+	// }
 
 
   changeToSignup = () => {

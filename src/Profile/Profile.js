@@ -8,16 +8,18 @@ class Profile extends Component {
 
   //Data
   state = {
-    f_name: '',
-    l_name: '',
-    gender: '',
-    age: 0,
-    height: 0,
-    weight: 0,
-    bmi: 0,
-    totoal_rounds: 0,
-    totoal_moves: 0,
-    total_ellbows: 0
+    user: {
+      f_name: 'fff',
+      l_name: '',
+      gender: '?',
+      age: 67,
+      height: 0,
+      weight: 0,
+      bmi: 0,
+      totoal_rounds: 0,
+      totoal_moves: 0,
+      total_ellbows: 0
+    }
   }
 
 
@@ -28,9 +30,27 @@ class Profile extends Component {
 					Authorization: `Bearer ${localStorage.getItem('token')}`
 				}}).then( (res) => {
           console.log(res);
+          this.setState({
+            user: res.data
+          }, () => {
+            console.log('state', this.state);
+          })
         })
+
+    console.log(this.state);
+
   }
 
+
+  // calcBmi = () => {
+  //   this.setState({
+  //
+  //   })
+  //   this.state.user.weight / ((this.state.user.height / 100) * 2)
+  // }
+  // componentDidMount() {
+  //   console.log(this.state);
+  // }
 
   // NAME
   // <div className="name_container">
@@ -88,10 +108,11 @@ class Profile extends Component {
       <div className="profile_main_container">
 	<div className="profile_container">
 
-	<div className="name_container">
-		<span className="f_name">Karen</span> <br />
-		<span className="l_name">Hammersmith</span>
-	</div>
+    <div className="name_container">
+  		<span className="f_name">{this.state.user.f_name}</span> <br />
+  		<span className="l_name">{this.state.user.l_name}</span>
+  	</div>
+
 
 
 <div className="c_cross">
@@ -127,32 +148,32 @@ class Profile extends Component {
 					</div>
 				</div>
 
-			<div className="info_info_cont">
-				<div className="data_c gender_d">gender: </div>
-				<div className="data_c age_d">age: </div>
-				<div className="data_c heigth_d">heigth: </div>
-				<div className="data_c weight_d">weight: </div>
-				<div className="data_c bmi_d">bmi: </div>
-			</div>
+  			<div className="info_info_cont">
+  				<div className="data_c gender_d">gender: </div>
+  				<div className="data_c age_d">age: </div>
+  				<div className="data_c heigth_d">heigth: </div>
+  				<div className="data_c weight_d">weight: </div>
+  				<div className="data_c bmi_d">bmi: </div>
+  			</div>
 
 
-			<div className="info_info_data_container">
-				<div className="data_a">FEMALE</div>
-				<div className="data_a">52</div>
-				<div className="data_a">175cm</div>
-				<div className="data_a">65kg</div>
-				<div className="data_a">0,02</div>
-			</div>
+        <div className="info_info_data_container">
+          <div className="data_a">{this.state.user.gender}</div>
+          <div className="data_a">{this.state.user.age}</div>
+          <div className="data_a">{this.state.user.height}cm</div>
+          <div className="data_a">{this.state.user.weight}kg</div>
+          <div className="data_a">{this.state.user.bmi}</div>
+        </div>
 
 			</div>
 
 
 			<div className="info_bottom_container">
-			<div className="info_bottom_sub">
-				<div className="info_bottom"><span className="info_b_data">50</span>Total Rounds</div>
-				<div className="info_bottom"><span className="info_b_data">150</span>Total Moves</div>
-				<div className="info_bottom"><span className="info_b_data">7</span>Total Ellbows</div>
-				</div>
+        <div className="info_bottom_sub">
+          <div className="info_bottom"><span className="info_b_data">{this.state.user.totoal_rounds}</span>Total Rounds</div>
+          <div className="info_bottom"><span className="info_b_data">{this.state.user.totoal_moves}</span>Total Moves</div>
+          <div className="info_bottom"><span className="info_b_data">{this.state.user.total_ellbows}</span>Total Ellbows</div>
+          </div>
 			</div>
 		</div>
 
