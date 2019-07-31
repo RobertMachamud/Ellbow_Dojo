@@ -84,6 +84,9 @@ class ProfileChange extends Component {
     this.setState({ weight: e.target.value })
   }
 
+  changeGender = (e) => {
+    this.setState({ gender: e.target.value })
+  }
 
   // changeData = () => {
   //   e.preventDefault()
@@ -122,9 +125,9 @@ class ProfileChange extends Component {
 							<input onChange={this.changeAge} value={this.state.age} placeholder="Your Age" className="ch_input" type="number" />
 							<input onChange={this.changeHeight} value={this.state.height} placeholder="Your Height" className="ch_input" type="number" />
 							<input onChange={this.changeWeight} value={this.state.weight} placeholder="Your Weight" className="ch_input" type="number" />
-							<select className="ch_input g_select">
-								<option value="Male">Male</option>
-								<option value="Female">Female</option>
+							<select onChange={this.changeGender} value={this.state.gender} className="ch_input g_select">
+								<option value="male">Male</option>
+								<option value="female">Female</option>
 							</select>
 						</div>
 					</div>
