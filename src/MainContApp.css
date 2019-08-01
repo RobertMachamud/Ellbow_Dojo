@@ -6,3 +6,26 @@
 	max-height: 100vh;
 	transition: .5s;
 }
+
+.main_container::before
+{
+	content: '';
+	position: absolute;
+	left: 15%;
+	width: 60%;
+	height: 100%;
+	background: url(https://res.cloudinary.com/dxcrd5sos/image/upload/v1564668637/kissclipart-mixed-martial-arts-muay-thai-boxing-stock-photogra-ed5e740d91594e71_z4urdj.png);
+	background-size: cover;
+}
+
+.home_txt_box
+{
+	position: absolute;
+	bottom: 23%;
+	right: 3.5%;
+	font-size: 28px;
+	font-weight: 400;
+	line-height: 36px;
+	color: rgba(0,0,0,.8);
+	text-shadow: .3px .3px 3px rgba(0,0,0,.3);
+}

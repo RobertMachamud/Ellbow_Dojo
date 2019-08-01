@@ -88,20 +88,22 @@ class ProfileChange extends Component {
 
   changeData = (e) => {
     e.preventDefault()
+    console.log('state', this.state);
     axios.patch('http://localhost:5000/api/profile', this.state,
     {headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }}).then( (res) => {
-          console.log('FE REES-DATA' ,res);
+          console.log('FE REES-DATA', res);
           this.setState({
-            f_name: res.data.f_name,
-            l_name: res.data.l_name,
-            gender: res.data.age,
-            age: res.data.f_name,
-            height: res.data.height,
-            weight: res.data.weight
+            f_name: res.data.user.f_name,
+            l_name: res.data.user.l_name,
+            gender: res.data.user.gender,
+            age: res.data.user.age,
+            height: res.data.user.height,
+            weight: res.data.user.weight
           })
-        })
+          localStorage.setItem('token', res.data.token)
+        }).catch(err => console.log('err', err))
   }
 
 
@@ -128,15 +130,15 @@ class ProfileChange extends Component {
 
   				<div className="ch_pr_right">
   					<div className="name_input_box">
-  						<input onChange={this.changeFName} value={this.state.f_name} placeholder="Your First Name" className="ch_input" type="text" />
-  						<input onChange={this.changeLName} value={this.state.l_name} placeholder="Your Last Name" className="ch_input" type="text" />
+  						<input onChange={this.changeFName} value={this.state.f_name} className="ch_input" type="text" />
+  						<input onChange={this.changeLName} value={this.state.l_name} className="ch_input" type="text" />
   					</div>
 
   					<div className="rest_input_bx">
   						<div className="rest_input_box_box">
-  							<input onChange={this.changeAge} value={this.state.age} placeholder="Your Age" className="ch_input" type="number" />
-  							<input onChange={this.changeHeight} value={this.state.height} placeholder="Your Height" className="ch_input" type="number" />
-  							<input onChange={this.changeWeight} value={this.state.weight} placeholder="Your Weight" className="ch_input" type="number" />
+  							<input onChange={this.changeAge} value={this.state.age} className="ch_input" type="number" />
+  							<input onChange={this.changeHeight} value={this.state.height} className="ch_input" type="number" />
+  							<input onChange={this.changeWeight} value={this.state.weight} className="ch_input" type="number" />
   							<select onChange={this.changeGender} value={this.state.gender} className="ch_input g_select">
   								<option value="male">Male</option>
   								<option value="female">Female</option>

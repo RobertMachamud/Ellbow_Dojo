@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './SparringProgramm.css'
-// import SparringData from './SparringData'
+import axios from 'axios'
 import Display from './Display'
 import ReactCountdownClock from 'react-countdown-clock'
 
@@ -55,6 +55,19 @@ class SparringProgramm extends Component {
     this.setState({ timer: this.state.timer + 1 })
   }
 
+
+  changeData = (e) => {
+    e.preventDefault()
+    axios.patch('http://localhost:5000/api/profile', this.state,
+    {headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+        }}).then( (res) => {
+          console.log('FE REES-DATA' ,res);
+          this.setState({
+            
+          })
+        })
+  }
   // onComplete = () => {
   //   this.setState({ timer: this.state.timer + 1 },
   //     () => console.log(this.state.timer)
