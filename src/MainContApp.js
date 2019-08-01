@@ -43,6 +43,7 @@ class MainContApp extends Component {
         </div>
 
         <div className="home_sparring_button">Start your Sparring</div>
+        
       </div>
     )
   }
