@@ -64,15 +64,35 @@ class SparringProgramm extends Component {
         }}).then( (res) => {
           console.log('FE REES-DATA' ,res);
           this.setState({
-            
+            f_name: res.data.f_name,
+            l_name: res.data.l_name,
+            gender: res.data.age,
+            age: res.data.f_name,
+            height: res.data.height,
+            weight: res.data.weight
           })
         })
   }
-  // onComplete = () => {
-  //   this.setState({ timer: this.state.timer + 1 },
-  //     () => console.log(this.state.timer)
-  //   )
-  // }
+
+
+  // params -> counters
+  updateTotals = (rounds, moves) => {
+    axios.patch('http://localhost:5000/api/profile', {
+      total_rounds: this.state.user.total_rounds + rounds,
+      total_moves: this.state.user.total_moves + moves
+    },
+    {headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+        }}).then( (res) => {
+          this.State({
+            total_rounds: res.data.total_rounds,
+            total_moves: res.data.total_moves
+          })
+        })
+  }
+
+
+
 
   play_round = (round, round_nr, g) => {
     const start = (counter) => {
@@ -105,6 +125,8 @@ class SparringProgramm extends Component {
        setTimeout( () => {
          console.log('finish')
            console.log('finish condition!');
+           this.updateTotals(this.props.game.length, (this.props.game[0].length * this.props.game.length))
+           // this.updateTotals(round_nr, (counter * round_nr))
            this.setState({
              running: false,
              img: 'https://res.cloudinary.com/dxcrd5sos/image/upload/v1564466474/9599865-cartoon-character-exhausted-on-finish-line_mutod6.jpg',
