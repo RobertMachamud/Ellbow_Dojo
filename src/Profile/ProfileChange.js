@@ -88,10 +88,14 @@ class ProfileChange extends Component {
     this.setState({ gender: e.target.value })
   }
 
-  // changeData = () => {
+  // changeData = (e) => {
   //   e.preventDefault()
-  //   axios.patch
+  //   axios.patch('http://localhost:5000/api/profile/',
+  //   {headers: {
+  //         Authorization: `Bearer ${localStorage.getItem('token')}`
+  //       }})
   // }
+
 
 
 

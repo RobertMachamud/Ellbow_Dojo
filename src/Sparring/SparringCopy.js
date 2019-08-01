@@ -44,10 +44,12 @@ class SparringProgramm extends Component {
     })
   }
 
-
+  //
   // addToProfile = (rounds_game, moves_game) => {
   //   let total_rounds_game = rounds_game
   //   let total_moves_game = moves_game
+  //
+  //   // ? adding to user -
   // }
 
 
@@ -171,7 +173,8 @@ class SparringProgramm extends Component {
                            fontSize="2em"
                            font={"sans-serif"}
                            paused={this.state.paused}
-                           onComplete={this.onComplete} />
+                           onComplete={this.onComplete}
+                            />
             </div>
 
   				</div>

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './SelectSparring.css'
 import Slider from '@material-ui/core/Slider'
 import { withStyles } from '@material-ui/core/styles'
+import '@fortawesome/fontawesome-free/css/all.css'
 import Burger from '../Burger'
 import Sidebar from '../Sidebar'
 
@@ -52,14 +53,14 @@ import Sidebar from '../Sidebar'
 
 const PrettoSlider = withStyles({
   root: {
-    color: 'purple',
+    color: 'rgba(0,0,0,.5)',
     height: 8,
   },
   thumb: {
     open: false,
     height: 24,
     width: 24,
-    backgroundColor: '#fff',
+    backgroundColor: 'purple',
     border: '2px solid currentColor',
     marginTop: -8,
     marginLeft: -12,
@@ -73,11 +74,11 @@ const PrettoSlider = withStyles({
   },
   track: {
     height: 9,
-    borderRadius: 4,
+    borderRadius: 3,
   },
   rail: {
     height: 8,
-    borderRadius: 4,
+    borderRadius: 3,
   },
 
 
@@ -142,8 +143,6 @@ class SelectSparring extends Component {
     return (
       <div className="select_sparring">
 
-
-
         <Sidebar />
 
         <div className={this.state.open ? 'select_sparring_slide active' : 'select_sparring_slide'}>
@@ -152,7 +151,9 @@ class SelectSparring extends Component {
 
         <div className="sel_spar_container">
 
-        <h2 className="sel_spar_container_head">Select your Sparring</h2>
+        <div className="sel_spar_container_head">
+				<h2 className="sel_spar_container_header">Select your Sparring</h2>
+				</div>
 
         <form onSubmit={(e) => {e.preventDefault();
           this.props.startSparring(this.state.rounds, this.state.duration, this.state.pause);}} className="sel_spar_slider_form">
@@ -161,9 +162,8 @@ class SelectSparring extends Component {
 
             <PrettoSlider defaultValue={5}
                           aria-labelledby="discrete-slider"
-                          valueLabelDisplay="on"
+                          valueLabelDisplay="auto"
                           step={1}
-                          marks
                           min={1}
                           max={10}
                           value={this.state.rounds}
@@ -171,9 +171,8 @@ class SelectSparring extends Component {
 
             <PrettoSlider defaultValue={3}
                           aria-labelledby="discrete-slider"
-                          valueLabelDisplay="on"
+                          valueLabelDisplay="auto"
                           step={1}
-                          marks
                           min={1}
                           max={10}
                           value={this.state.duration}
@@ -181,18 +180,34 @@ class SelectSparring extends Component {
 
             <PrettoSlider defaultValue={1}
                           aria-labelledby="discrete-slider"
-                          valueLabelDisplay="on"
+                          valueLabelDisplay="auto"
                           step={1}
-                          marks
                           min={1}
                           max={10}
                           value={this.state.pause}
                           onChange={(e, val) => this.changePause(e, val)} />
           </div>
-            <button type="submit" className="sel_spar_button">START</button>
+            <button type="submit" className="sel_spar_button">FIGHT!</button>
         </form>
 
           </div>
+
+          <div class="sel_sparr_time_info">
+            <div className="time_info_circles">
+              <div className="i_circle"><i className="fas fa-circle-notch"></i></div>
+              <div className="i_circle"><i className="fas fa-stopwatch"></i></div>
+              <div className="i_circle"><i className="fas fa-pause"></i></div>
+              <div className="i_circle i_total"><i className="far fas fa-clock"></i></div>
+            </div>
+
+            <div className="time_info_data">
+              <div className="i_data"><span className="i_data_span">{this.state.rounds}</span> Rounds</div>
+              <div className="i_data"><span className="i_data_span">{this.state.duration}</span> min Time</div>
+              <div className="i_data"><span className="i_data_span">{this.state.pause}</span> min Break</div>
+              <div className="i_data i_total"><span className="i_data_span">{this.state.rounds * this.state.duration}</span> min Total Time</div>
+            </div>
+          </div>
+
         </div>
       </div>
     )
