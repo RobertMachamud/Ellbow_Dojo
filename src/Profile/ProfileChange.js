@@ -35,12 +35,10 @@ class ProfileChange extends Component {
 
   slide = () => {
     if (this.state.open) {
-      console.log('it is open');
       this.setState({
         open: false
       })
     } else {
-      console.log('it is not open');
       this.setState({
         open: true
       })
@@ -88,13 +86,23 @@ class ProfileChange extends Component {
     this.setState({ gender: e.target.value })
   }
 
-  // changeData = (e) => {
-  //   e.preventDefault()
-  //   axios.patch('http://localhost:5000/api/profile/',
-  //   {headers: {
-  //         Authorization: `Bearer ${localStorage.getItem('token')}`
-  //       }})
-  // }
+  changeData = (e) => {
+    e.preventDefault()
+    axios.patch('http://localhost:5000/api/profile', this.state,
+    {headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+        }}).then( (res) => {
+          console.log('FE REES-DATA' ,res);
+          this.setState({
+            f_name: res.data.f_name,
+            l_name: res.data.l_name,
+            gender: res.data.age,
+            age: res.data.f_name,
+            height: res.data.height,
+            weight: res.data.weight
+          })
+        })
+  }
 
 
 
@@ -106,44 +114,44 @@ class ProfileChange extends Component {
 
       <Sidebar />
 
-		<form onSubmit={(e) => this.changeData} className={this.state.open ? 'profile_change_slider active' : 'profile_change_slider'}>
+  		<form onSubmit={(e) => this.changeData(e)} className={this.state.open ? 'profile_change_slider active' : 'profile_change_slider'}>
 
-      <Burger slide={this.slide} open={this.state.open}/>
+        <Burger slide={this.slide} open={this.state.open}/>
 
-			<div className="change_profile_card">
-				<div className="ch_pr_left">
-					<div className="ch_pr_left_wrapper">
-						<div className="ch_pic"></div>
-						<div className="ch_pr_pic_button">Change Profile Picture</div>
-					</div>
-				</div>
+  			<div className="change_profile_card">
+  				<div className="ch_pr_left">
+  					<div className="ch_pr_left_wrapper">
+  						<div className="ch_pic"></div>
+  						<div className="ch_pr_pic_button">Change Profile Picture</div>
+  					</div>
+  				</div>
 
-				<div className="ch_pr_right">
-					<div className="name_input_box">
-						<input onChange={this.changeFName} value={this.state.f_name} placeholder="Your First Name" className="ch_input" type="text" />
-						<input onChange={this.changeLName} value={this.state.l_name} placeholder="Your Last Name" className="ch_input" type="text" />
-					</div>
+  				<div className="ch_pr_right">
+  					<div className="name_input_box">
+  						<input onChange={this.changeFName} value={this.state.f_name} placeholder="Your First Name" className="ch_input" type="text" />
+  						<input onChange={this.changeLName} value={this.state.l_name} placeholder="Your Last Name" className="ch_input" type="text" />
+  					</div>
 
-					<div className="rest_input_bx">
-						<div className="rest_input_box_box">
-							<input onChange={this.changeAge} value={this.state.age} placeholder="Your Age" className="ch_input" type="number" />
-							<input onChange={this.changeHeight} value={this.state.height} placeholder="Your Height" className="ch_input" type="number" />
-							<input onChange={this.changeWeight} value={this.state.weight} placeholder="Your Weight" className="ch_input" type="number" />
-							<select onChange={this.changeGender} value={this.state.gender} className="ch_input g_select">
-								<option value="male">Male</option>
-								<option value="female">Female</option>
-							</select>
-						</div>
-					</div>
+  					<div className="rest_input_bx">
+  						<div className="rest_input_box_box">
+  							<input onChange={this.changeAge} value={this.state.age} placeholder="Your Age" className="ch_input" type="number" />
+  							<input onChange={this.changeHeight} value={this.state.height} placeholder="Your Height" className="ch_input" type="number" />
+  							<input onChange={this.changeWeight} value={this.state.weight} placeholder="Your Weight" className="ch_input" type="number" />
+  							<select onChange={this.changeGender} value={this.state.gender} className="ch_input g_select">
+  								<option value="male">Male</option>
+  								<option value="female">Female</option>
+  							</select>
+  						</div>
+  					</div>
 
-					<div className="ch_pr_r_button_bx">
-            <div onClick={this.getData} className="set_back_button">Reset</div>
-						<button className="save_changes_button" type="submit">Save Changes</button>
-					</div>
-				</div>
-			</div>
-		</form>
-	</div>
+  					<div className="ch_pr_r_button_bx">
+              <div onClick={this.getData} className="set_back_button">Reset</div>
+  						<button className="save_changes_button" type="submit">Save Changes</button>
+  					</div>
+  				</div>
+  			</div>
+  		</form>
+  	</div>
     )
   }
 
