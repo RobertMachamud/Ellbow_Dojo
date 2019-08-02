@@ -32,6 +32,7 @@ class Profile extends Component {
     {headers: {
 					Authorization: `Bearer ${localStorage.getItem('token')}`
 				}}).then( (res) => {
+          console.log('data', res.data);
           this.setState({
             user: res.data,
             bmi: parseFloat((res.data.weight / ((res.data.height / 100) * 2)).toFixed(1))
@@ -123,15 +124,15 @@ class Profile extends Component {
 
   				<div className="info_bottom_container">
   					<div className="info_bottom_sub">
-  						<div className="info_bottom"><span className="info_b_data">{this.state.totoal_rounds}</span>Total Rounds</div>
-  						<div className="info_bottom"><span className="info_b_data">{this.state.totoal_moves}</span>Total Moves</div>
+  						<div className="info_bottom"><span className="info_b_data">{this.state.user.total_rounds}</span>Total Rounds</div>
+  						<div className="info_bottom"><span className="info_b_data">{this.state.user.total_moves}</span>Total Moves</div>
   						<div className="info_bottom"><span className="info_b_data">{this.state.total_ellbows}</span>Total Ellbows</div>
   					</div>
   				</div>
   			</div>
+        <div title="go to Change Profile" className="to_change_profile"></div>
   		</div>
   	</div>
-    <div title="go to Change Profile" className="to_change_profile"></div>
   </div>
 </div>
 

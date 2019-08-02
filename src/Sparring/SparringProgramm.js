@@ -3,7 +3,7 @@ import './SparringProgramm.css'
 import axios from 'axios'
 import Display from './Display'
 import ReactCountdownClock from 'react-countdown-clock'
-
+import Sound from 'react-sound'
 
 
 class SparringProgramm extends Component {
@@ -21,7 +21,8 @@ class SparringProgramm extends Component {
     pause: this.props.pause,
     paused: true,
     gap: 2000,
-    timer: 0
+    timer: 0,
+    sound: ''
   }
 
 
@@ -58,6 +59,7 @@ class SparringProgramm extends Component {
       rem_rounds: this.props.rounds,
       remaning_time: this.props.rounds * this.props.duration
     })
+    console.log('props', this.props);
     // console.log('sparr_state' ,this.state);
   }
 
@@ -159,7 +161,8 @@ class SparringProgramm extends Component {
          })
          this.setState({
            move: `${round[counter - 1].name}`,
-           img: `${round[counter - 1].img}`
+           img: `${round[counter - 1].img}`,
+           sound: `${round[counter - 1].sound}`
          })
          start(counter)       // repeat (condition)
        }, this.state.gap)
@@ -222,7 +225,17 @@ class SparringProgramm extends Component {
     st(0)
   }
 
+handleSongLoading = () => {
+  // console.log('loading audio');
+}
 
+handleSongPlaying = () => {
+  // console.log('playing audio');
+}
+
+handleSongFinishedPlaying = () => {
+  // console.log('finished audio');
+}
 
 
   //Render
@@ -274,6 +287,9 @@ class SparringProgramm extends Component {
   			<div className="sparr_disp">
   				<div className="display_moves">
   					<Display move={this.state.move} img={this.state.img} />
+            <Sound url={this.state.sound} playStatus='PLAYING' onLoading={this.handleSongLoading}
+   onPlaying={this.handleSongPlaying}
+   onFinishedPlaying={this.handleSongFinishedPlaying}/>
   				</div>
   			</div>
 
