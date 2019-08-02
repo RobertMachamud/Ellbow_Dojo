@@ -113,6 +113,17 @@ class SparringProgramm extends Component {
   }
 
 
+
+  startSparring = () => {
+    this.setState({ running: true })
+    this.play()
+  }
+
+  stopSparr = () => {
+    this.setState({ running: false })
+  }
+
+
   remRounds = (round) => {
     this.setState({
       rem_rounds: this.props.rounds - this.state.rounds
@@ -135,6 +146,7 @@ class SparringProgramm extends Component {
 
 
 
+  // Game
   play_round = (round, round_nr, g) => {
     const start = (counter) => {
       console.log('Start 2');
@@ -179,12 +191,13 @@ class SparringProgramm extends Component {
     start(0)
   }
 
+
   play = () => {
     console.log('Start')
 
     setTimeout( () => {
       this.remTime_two(this.state.remaning_time)
-    }, 2000)
+    }, 4000)
 
     this.setState({
       img: 'https://res.cloudinary.com/dxcrd5sos/image/upload/v1564467591/start_k7rg2m.png',
@@ -199,12 +212,9 @@ class SparringProgramm extends Component {
            rounds: `${c}`
          })
          this.remRounds(c)
-         // this.setState({
-         //   duration: this.props.duration + 0.0000000001
-         // })
          this.play_round(this.props.game[c - 1], c, this.props.game)
          setTimeout( () => {
-           st(c)   // repeat (condition)
+           st(c)   // repeat (kinda condition)
          }, (this.props.pause * 60) * 1000)
        }, c < 1 ? 2000 : (this.props.game[0].length + 1) * this.state.gap)
      }
@@ -213,18 +223,6 @@ class SparringProgramm extends Component {
   }
 
 
-  startSparring = () => {
-    this.setState({ running: true })
-    this.play()
-  }
-
-  stopSparr = () => {
-    this.setState({ running: false })
-  }
-
-
-
-  // backSparrSelect
 
 
   //Render
