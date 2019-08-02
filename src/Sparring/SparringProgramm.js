@@ -25,6 +25,7 @@ class SparringProgramm extends Component {
   }
 
 
+
   // let c = 1
   // // before
   // console.log(`${c}`)
@@ -114,6 +115,18 @@ class SparringProgramm extends Component {
     })
   }
 
+  // Not working yet
+  remTime = () => {
+    this.setState({
+      remaning_time: this.props.rounds * this.props.duration
+    })
+    setTimeout( () => {
+      this.setState({
+        remaning_time: this.props.rounds * this.props.duration - 1
+      })
+    }, 60 * 1000)
+  }
+
 
 
   play_round = (round, round_nr, g) => {
@@ -169,6 +182,7 @@ class SparringProgramm extends Component {
     })
     const st = (c) => {
      if (c < this.props.game.length) {
+       this.remTime()
        setTimeout(() => {
          c++
          this.setState({
