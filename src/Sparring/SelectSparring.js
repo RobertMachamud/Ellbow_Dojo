@@ -192,7 +192,7 @@ class SelectSparring extends Component {
 
           </div>
 
-          <div class="sel_sparr_time_info">
+          <div className="sel_sparr_time_info">
             <div className="time_info_circles">
               <div className="i_circle"><i className="fas fa-circle-notch"></i></div>
               <div className="i_circle"><i className="fas fa-stopwatch"></i></div>

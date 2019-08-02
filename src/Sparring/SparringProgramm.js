@@ -53,8 +53,12 @@ class SparringProgramm extends Component {
 
   //Functions
   componentWillMount() {
-    console.log('sparr_state' ,this.state);
     this.getData()
+    this.setState({
+      rem_rounds: this.props.rounds,
+      remaning_time: this.props.rounds * this.props.duration
+    })
+    // console.log('sparr_state' ,this.state);
   }
 
   componentWillReceiveProps(props) {
@@ -115,17 +119,19 @@ class SparringProgramm extends Component {
     })
   }
 
-  // Not working yet
-  remTime = () => {
-    this.setState({
-      remaning_time: this.props.rounds * this.props.duration
-    })
-    setTimeout( () => {
-      this.setState({
-        remaning_time: this.props.rounds * this.props.duration - 1
-      })
-    }, 60 * 1000)
-  }
+
+  remTime_two = (total_time) => {
+      if (total_time > 0) {
+        setTimeout( () => {
+          total_time -= 1
+          this.setState({
+            remaning_time: total_time
+          })
+          this.remTime_two(this.state.remaning_time)
+        }, 60 * 1000)
+      }
+    }
+
 
 
 
@@ -175,6 +181,11 @@ class SparringProgramm extends Component {
 
   play = () => {
     console.log('Start')
+
+    setTimeout( () => {
+      this.remTime_two(this.state.remaning_time)
+    }, 2000)
+
     this.setState({
       img: 'https://res.cloudinary.com/dxcrd5sos/image/upload/v1564467591/start_k7rg2m.png',
       move: '',
@@ -182,7 +193,6 @@ class SparringProgramm extends Component {
     })
     const st = (c) => {
      if (c < this.props.game.length) {
-       this.remTime()
        setTimeout(() => {
          c++
          this.setState({
@@ -229,8 +239,11 @@ class SparringProgramm extends Component {
 
     				<div className="sparr_data_box">
               <div className="s_data_bx">
-                <div className="s_data_cont">Remaining Rounds:<br/> {this.state.rem_rounds}</div>
-                <div className="s_data_cont">Remaining Time:<br/> {this.state.remaning_time} min</div>
+                <div className="s_data_cont">Remaining Rounds:</div>
+                <div className={this.state.running === false ? 's_data_data' : 's_data_data s_data_running'}>{this.state.rem_rounds}</div>
+
+                <div className="s_data_cont">Remaining Time:</div>
+                <div className={this.state.running === false ? 's_data_data' : 's_data_data s_data_running'}>{this.state.remaning_time}</div>
               </div>
 
             <div className="s_data_data_bx">

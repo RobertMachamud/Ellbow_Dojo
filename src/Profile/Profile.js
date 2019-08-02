@@ -12,8 +12,6 @@ class Profile extends Component {
   state = {
     open: false,
     bmi: 0,
-    totoal_rounds: 0,
-    totoal_moves: 0,
     total_ellbows: 0,
     user: {
       f_name: 'Please',
@@ -22,6 +20,8 @@ class Profile extends Component {
       age: 0,
       height: 0,
       weight: 0,
+      total_rounds: 0,
+      total_moves: 0,
     }
   }
 

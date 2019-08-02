@@ -75,6 +75,7 @@ body
 {
 	width: 550px;
 	height: 200px;
+	box-sizing: border-box;
 }
 
 .s_data_bx,
@@ -156,6 +157,22 @@ body
 	left: 50%;
 	transform: translateX(-50%);
 	font-size: 1.5em;
+}
+
+
+
+.s_data_data
+{
+	transform: translateY(-5px);
+	transition: .3s;
+}
+
+.s_data_running
+{
+	transform: translateY(-5px) scale(1.9);
+	color: purple;
+	/* text-shadow: .1px .1px 0px rgba(0,0,0,1); */
+	font-weight: bold;
 }
 
 
