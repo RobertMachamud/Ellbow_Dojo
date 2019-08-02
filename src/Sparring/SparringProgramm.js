@@ -10,6 +10,9 @@ class SparringProgramm extends Component {
   //Data
   state = {
     running: false,
+    rem_rounds: 0,
+    remaning_rounds: 0,
+    remaning_time: 0,
     move: '',
     img: '',
     game: this.props.game,
@@ -32,9 +35,25 @@ class SparringProgramm extends Component {
   //   })
   // }, 2000)
 
+  getData = () => {
+    axios.get('http://localhost:5000/api/profile' ,
+    {headers: {
+					Authorization: `Bearer ${localStorage.getItem('token')}`
+				}}).then( (res) => {
+          console.log('RES Get', res);
+          this.setState({
+            total_rounds: res.data.total_rounds,
+            total_moves: res.data.total_moves
+          }, () => {
+            console.log('State GET', this.state);
+          })
+        })
+  }
+
   //Functions
   componentWillMount() {
     console.log('sparr_state' ,this.state);
+    this.getData()
   }
 
   componentWillReceiveProps(props) {
@@ -43,12 +62,6 @@ class SparringProgramm extends Component {
       game: props.game
     })
   }
-
-
-  // addToProfile = (rounds_game, moves_game) => {
-  //   let total_rounds_game = rounds_game
-  //   let total_moves_game = moves_game
-  // }
 
 
   onComplete = () => {
@@ -75,22 +88,31 @@ class SparringProgramm extends Component {
   }
 
 
-  // params -> counters
+  // params -> counters   maybe
   updateTotals = (rounds, moves) => {
     axios.patch('http://localhost:5000/api/profile', {
-      total_rounds: this.state.user.total_rounds + rounds,
-      total_moves: this.state.user.total_moves + moves
+      total_rounds: this.state.total_rounds + rounds,
+      total_moves: this.state.total_moves + moves
     },
     {headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }}).then( (res) => {
-          this.State({
-            total_rounds: res.data.total_rounds,
-            total_moves: res.data.total_moves
+          console.log('RES_Change', res);
+          this.setState({
+            total_rounds: res.data.user.total_rounds,
+            total_moves: res.data.user.total_moves
+          }, () => {
+            console.log('NEW state', this.state);
           })
         })
   }
 
+
+  remRounds = (round) => {
+    this.setState({
+      rem_rounds: this.props.rounds - this.state.rounds
+    })
+  }
 
 
 
@@ -152,6 +174,7 @@ class SparringProgramm extends Component {
          this.setState({
            rounds: `${c}`
          })
+         this.remRounds(c)
          // this.setState({
          //   duration: this.props.duration + 0.0000000001
          // })
@@ -188,12 +211,12 @@ class SparringProgramm extends Component {
   		<div className="sparr_container">
   			<div className="sparr_data_container">
 
-  			<div className="round">Round: <span className="s_data_span">{this.state.round}</span></div>
+  			<div className="round">Round: <span className="s_data_span">{this.state.rounds}</span></div>
 
     				<div className="sparr_data_box">
               <div className="s_data_bx">
-                <div className="s_data_cont">Remaining Rounds:</div>
-                <div className="s_data_cont">Remaining Time:</div>
+                <div className="s_data_cont">Remaining Rounds:<br/> {this.state.rem_rounds}</div>
+                <div className="s_data_cont">Remaining Time:<br/> {this.state.remaning_time} min</div>
               </div>
 
             <div className="s_data_data_bx">

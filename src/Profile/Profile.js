@@ -41,18 +41,15 @@ class Profile extends Component {
 
       slide = () => {
         if (this.state.open) {
-          console.log('it is open');
           this.setState({
             open: false
           })
         } else {
-          console.log('it is not open');
           this.setState({
             open: true
           })
         }
     	}
-
 
 
   render() {
@@ -134,7 +131,7 @@ class Profile extends Component {
   			</div>
   		</div>
   	</div>
-    <div title="go to Change Profile" class="to_change_profile"></div>
+    <div title="go to Change Profile" className="to_change_profile"></div>
   </div>
 </div>
 
