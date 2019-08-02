@@ -1,0 +1,9 @@
+/* .tut_navbar nav ul */
+.tut_tabs
+{
+	display: flex;
+	justify-content: space-around;
+/*	background: lightblue;*/
+	width: 900px;
+	box-sizing: border-box;
+}

@@ -30,7 +30,9 @@ class MainContApp extends Component {
     return (
       <div id="main" className={this.state.open ? 'main_container active' : 'main_container'}>
         <div className="pic_slider">
+
           <Burger slide={this.slide} open={this.state.open}/>
+
         </div>
 
         <div className="home_txt_box">
@@ -43,7 +45,7 @@ class MainContApp extends Component {
         </div>
 
         <div className="home_sparring_button">Start your Sparring</div>
-        
+
       </div>
     )
   }

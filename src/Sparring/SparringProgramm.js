@@ -24,7 +24,8 @@ class SparringProgramm extends Component {
     timer: 0,
     sound: '',
     total_rounds: 0,
-    total_moves: 0
+    total_moves: 0,
+    reward_counter: 150
   }
 
 
@@ -102,6 +103,25 @@ class SparringProgramm extends Component {
         }).catch(err => console.log('err', err))
   }
 
+  // Update -> Patch   total Ellbows
+  updateEllbows = (ellbow) => {
+    // console.log('Updaaaaate', rounds, moves);
+    axios.patch('http://localhost:5000/api/profile', {
+      total_ellbows: this.state.total_ellbows + ellbow
+    },
+    {headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+        }}).then( (res) => {
+          // console.log('RES_Change', res);
+          this.setState({
+            total_ellbows: res.data.user.total_ellbows
+          }, () => {
+            console.log('NEW Ellbow state', this.state);
+          })
+          localStorage.setItem('token', res.data.token)
+        }).catch(err => console.log('err', err))
+  }
+
 
   // Small Functions   ->  Timer/Start/Stop/Remaining
   onComplete = () => {
@@ -125,26 +145,32 @@ class SparringProgramm extends Component {
   }
 
 
-  remTime_two = (total_time) => {
+  remTime = (total_time) => {
       if (total_time > 0) {
         setTimeout( () => {
           total_time -= 1
           this.setState({
             remaning_time: total_time
           })
-          this.remTime_two(this.state.remaning_time)
+          this.remTime(this.state.remaning_time)
         }, 60 * 1000)
       }
     }
 
 
-  // Reward
-  rewardEllbow = () => {
+
+  // Reward Ellbows ++
+  rewardEllbow = (reward) => {   // call:  this.rewardEllbow(thisthis.state.reward_counter)
     console.log('Reward State', this.state);
-    if (this.state.total_moves >= 150) {
-      console.log('!!!!!!!ELLBOW!!!!!!');
+    if (this.state.total_moves >= reward) {
+      console.log('!!!!!!!ELLBOW!!!!!!')
+      this.updateEllbows(1)
+      this.setState({
+        reward_counter: reward + (reward * 1.5)
+      })
     }
   }
+
 
 
 
@@ -200,7 +226,7 @@ class SparringProgramm extends Component {
     console.log('Start')
 
     setTimeout( () => {
-      this.remTime_two(this.state.remaning_time)
+      this.remTime(this.state.remaning_time)
     }, 4000)
 
     this.setState({
