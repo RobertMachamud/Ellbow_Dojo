@@ -74,7 +74,7 @@ class Profile extends Component {
     			<div className="c_line c_two"></div>
     		</div>
 
-    		<div className="pic_container">
+    		<div className={this.state.user.gender === 'male' ? 'pic_container_m' : 'pic_container_f'}>
     		</div>
 
     		<div className="info_container">
@@ -86,7 +86,7 @@ class Profile extends Component {
 
   					<div className="d_circle_container">
   						<div className="d_circle gender_c">
-  							<i className={this.state.user.gender==='male' ? 'fas fa-mars' : 'fas fa-venus' }></i>
+  							<i className={this.state.user.gender === 'male' ? 'fas fa-mars' : 'fas fa-venus' }></i>
   						</div>
   						<div className="d_circle age_c">
   							<i className="fas fa-birthday-cake"></i>

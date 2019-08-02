@@ -68,7 +68,7 @@ body
 	width: 50px;
 	height: 2px;
 	background: #000;
-	border-radius: ;
+	border-radius: 30px;
 	position: absolute;
 }
 
@@ -125,7 +125,8 @@ body
 	font-weight: bold;
 }
 
-.pic_container
+.pic_container_m,
+.pic_container_f
 {
 	position: absolute;
 	top: 4%;
@@ -139,15 +140,22 @@ body
 	box-shadow: 4px 13px 30px 1px rgba(0, 0, 0, 0.3);
 }
 
-.pic_container::before
+.pic_container_m::before,
+.pic_container_f::before
 {
 	content: '';
+	border-radius: 10px;
 	z-index: 150;
 	position: absolute;
 	height: 100%;
 	width: 100%;
 	background: crimson;
 	opacity: .2;
+}
+
+.pic_container_m::before
+{
+	background: blue;
 }
 
 
@@ -159,7 +167,7 @@ body
 	z-index: 50;
 	width: 90%;
 	height: 75%;
-	border-radius: 10px;
+	border-radius: 30px;
 	box-shadow: ;
 	display: flex;
 	justify-content: center;

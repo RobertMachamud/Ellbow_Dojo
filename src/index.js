@@ -7,13 +7,13 @@ import Profile from './Profile/Profile'
 // import ProfileChange from './Profile/ProfileChange'
 
 // import Registration from './Registration/Registration'
-// import Sparring from './Sparring/Sparring'
+import Sparring from './Sparring/Sparring'
 
 import * as serviceWorker from './serviceWorker';
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 // ReactDOM.render(<SelectSparring />, document.getElementById('root'));
-ReactDOM.render(<Profile />, document.getElementById('root'));
+ReactDOM.render(<Sparring />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

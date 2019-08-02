@@ -26,17 +26,7 @@ class SparringProgramm extends Component {
   }
 
 
-
-  // let c = 1
-  // // before
-  // console.log(`${c}`)
-  // // after
-  // setInterval(() => {
-  //   this.setState({
-  //     move: c++
-  //   })
-  // }, 2000)
-
+  //Functions
   getData = () => {
     axios.get('http://localhost:5000/api/profile' ,
     {headers: {
@@ -71,31 +61,24 @@ class SparringProgramm extends Component {
   }
 
 
-  onComplete = () => {
-    this.setState({ timer: this.state.timer + 1 })
-  }
 
-
-  changeData = (e) => {
-    e.preventDefault()
-    axios.patch('http://localhost:5000/api/profile', this.state,
+  // Axios -> Get Totals
+  getData = () => {
+    axios.get('http://localhost:5000/api/profile' ,
     {headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }}).then( (res) => {
-          console.log('FE REES-DATA' ,res);
+          console.log('RES Get', res);
           this.setState({
-            f_name: res.data.f_name,
-            l_name: res.data.l_name,
-            gender: res.data.age,
-            age: res.data.f_name,
-            height: res.data.height,
-            weight: res.data.weight
+            total_rounds: res.data.total_rounds,
+            total_moves: res.data.total_moves
+          }, () => {
+            console.log('State GET', this.state);
           })
         })
   }
 
-
-  // params -> counters   maybe
+  // Update -> Patch  Totals
   updateTotals = (rounds, moves) => {
     axios.patch('http://localhost:5000/api/profile', {
       total_rounds: this.state.total_rounds + rounds,
@@ -115,6 +98,10 @@ class SparringProgramm extends Component {
   }
 
 
+  // Small Functions   ->  Timer/Start/Stop/Remaining
+  onComplete = () => {
+    this.setState({ timer: this.state.timer + 1 })
+  }
 
   startSparring = () => {
     this.setState({ running: true })
@@ -225,17 +212,19 @@ class SparringProgramm extends Component {
     st(0)
   }
 
-handleSongLoading = () => {
-  // console.log('loading audio');
-}
+  // Sound
+  handleSongLoading = () => {
+    // console.log('loading audio');
+  }
 
-handleSongPlaying = () => {
-  // console.log('playing audio');
-}
+  handleSongPlaying = () => {
+    // console.log('playing audio');
+  }
 
-handleSongFinishedPlaying = () => {
-  // console.log('finished audio');
-}
+  handleSongFinishedPlaying = () => {
+    // console.log('finished audio');
+  }
+
 
 
   //Render
