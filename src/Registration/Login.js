@@ -45,6 +45,7 @@ class Login extends Component {
 
   login = (e) => {
     e.preventDefault()
+    // console.log();
     axios.post('http://localhost:5000/api/login', this.state).then( (res) => {
       if (!res.data.token) {
         this.setState({
@@ -75,7 +76,7 @@ class Login extends Component {
         <Burger slide={this.slide} open={this.state.open}/>
 
       	<div className="login_card">
-      		<form className="login_form" onSubmit={(e) => this.login()}>
+      		<form className="login_form" onSubmit={(e) => this.login(e)}>
       			<div className="logo">
       				<div className="logo_logo"></div>
       				<div className="logo_brand">

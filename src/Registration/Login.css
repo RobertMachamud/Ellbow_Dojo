@@ -165,6 +165,7 @@ body
 	font-size: 18px;
 	font-weight: bolder;
 	color: #fff;
+	outline: none;
 	background: linear-gradient(to right, #4A00E0, #9D6289);
 	box-shadow: 0px 14px 80px 0px rgba(0, 0, 0, 0.3);
 	border: none;
