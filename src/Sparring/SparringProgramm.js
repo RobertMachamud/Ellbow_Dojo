@@ -22,34 +22,37 @@ class SparringProgramm extends Component {
     paused: true,
     gap: 2000,
     timer: 0,
-    sound: ''
+    sound: '',
+    total_rounds: 0,
+    total_moves: 0
   }
 
 
   //Functions
-  getData = () => {
-    axios.get('http://localhost:5000/api/profile' ,
-    {headers: {
-					Authorization: `Bearer ${localStorage.getItem('token')}`
-				}}).then( (res) => {
-          console.log('RES Get', res);
-          this.setState({
-            total_rounds: res.data.total_rounds,
-            total_moves: res.data.total_moves
-          }, () => {
-            console.log('State GET', this.state);
-          })
-        })
-  }
+  // getData = () => {
+  //   axios.get('http://localhost:5000/api/profile' ,
+  //   {headers: {
+	// 				Authorization: `Bearer ${localStorage.getItem('token')}`
+	// 			}}).then( (res) => {
+  //         console.log('RES Get', res);
+  //         this.setState({
+  //           total_rounds: res.data.total_rounds,
+  //           total_moves: res.data.total_moves
+  //         }, () => {
+  //           // console.log('State GET', this.state);
+  //         })
+  //       })
+  // }
 
   //Functions
   componentWillMount() {
+    console.log('STAAAATE', this.state);
     this.getData()
     this.setState({
       rem_rounds: this.props.rounds,
       remaning_time: this.props.rounds * this.props.duration
     })
-    console.log('props', this.props);
+    // console.log('props', this.props);
     // console.log('sparr_state' ,this.state);
   }
 
@@ -80,6 +83,7 @@ class SparringProgramm extends Component {
 
   // Update -> Patch  Totals
   updateTotals = (rounds, moves) => {
+    console.log('Updaaaaate', rounds, moves);
     axios.patch('http://localhost:5000/api/profile', {
       total_rounds: this.state.total_rounds + rounds,
       total_moves: this.state.total_moves + moves
@@ -94,7 +98,8 @@ class SparringProgramm extends Component {
           }, () => {
             console.log('NEW state', this.state);
           })
-        })
+          localStorage.setItem('token', res.data.token)
+        }).catch(err => console.log('err', err))
   }
 
 
@@ -132,6 +137,14 @@ class SparringProgramm extends Component {
       }
     }
 
+
+  // Reward
+  rewardEllbow = () => {
+    console.log('Reward State', this.state);
+    if (this.state.total_moves >= 150) {
+      console.log('ELLBOW!');
+    }
+  }
 
 
 
@@ -175,6 +188,7 @@ class SparringProgramm extends Component {
              img: 'https://res.cloudinary.com/dxcrd5sos/image/upload/v1564466474/9599865-cartoon-character-exhausted-on-finish-line_mutod6.jpg',
              move: ''
            })
+           this.rewardEllbow()
        }, 4000)
      }
     }

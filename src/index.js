@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
 // import './Sparring/SelectSparring.css'
-import Profile from './Profile/Profile'
+// import Profile from './Profile/Profile'
 // import ProfileChange from './Profile/ProfileChange'
 
 // import Registration from './Registration/Registration'
