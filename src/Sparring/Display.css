@@ -23,4 +23,5 @@
 	width: 100%; */
 	filter: opacity(.8);
   object-fit: scale-down;
+  transition: .3s;
 }

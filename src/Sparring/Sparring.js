@@ -22,9 +22,9 @@ class Sparring extends Component {
 
 
   startSparring = (rounds, duration, pause) => {
-    console.log('check', this.state);
+    // console.log('check', this.state);
     axios.get(`http://localhost:5000/api/moves?rounds=${rounds}&duration=${duration * 60}`).then( (res) => {
-      console.log('Data Game???', res);
+      // console.log('Data Game???', res);
       this.setState({
         status: 'game',
         game: res.data,

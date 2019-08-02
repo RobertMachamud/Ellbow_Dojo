@@ -46,7 +46,7 @@ class SparringProgramm extends Component {
 
   //Functions
   componentWillMount() {
-    console.log('STAAAATE', this.state);
+    // console.log('STAAAATE', this.state);
     this.getData()
     this.setState({
       rem_rounds: this.props.rounds,
@@ -71,7 +71,7 @@ class SparringProgramm extends Component {
     {headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }}).then( (res) => {
-          console.log('RES Get', res);
+          // console.log('RES Get', res);
           this.setState({
             total_rounds: res.data.total_rounds,
             total_moves: res.data.total_moves
@@ -83,7 +83,7 @@ class SparringProgramm extends Component {
 
   // Update -> Patch  Totals
   updateTotals = (rounds, moves) => {
-    console.log('Updaaaaate', rounds, moves);
+    // console.log('Updaaaaate', rounds, moves);
     axios.patch('http://localhost:5000/api/profile', {
       total_rounds: this.state.total_rounds + rounds,
       total_moves: this.state.total_moves + moves
@@ -91,7 +91,7 @@ class SparringProgramm extends Component {
     {headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }}).then( (res) => {
-          console.log('RES_Change', res);
+          // console.log('RES_Change', res);
           this.setState({
             total_rounds: res.data.user.total_rounds,
             total_moves: res.data.user.total_moves
@@ -142,7 +142,7 @@ class SparringProgramm extends Component {
   rewardEllbow = () => {
     console.log('Reward State', this.state);
     if (this.state.total_moves >= 150) {
-      console.log('ELLBOW!');
+      console.log('!!!!!!!ELLBOW!!!!!!');
     }
   }
 
@@ -182,13 +182,13 @@ class SparringProgramm extends Component {
          console.log('finish')
            console.log('finish condition!');
            this.updateTotals(this.props.game.length, (this.props.game[0].length * this.props.game.length))
+            this.rewardEllbow()
            // this.updateTotals(round_nr, (counter * round_nr))
            this.setState({
              running: false,
              img: 'https://res.cloudinary.com/dxcrd5sos/image/upload/v1564466474/9599865-cartoon-character-exhausted-on-finish-line_mutod6.jpg',
              move: ''
            })
-           this.rewardEllbow()
        }, 4000)
      }
     }
