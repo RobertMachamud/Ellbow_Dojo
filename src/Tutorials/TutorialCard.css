@@ -125,8 +125,8 @@
 	width: 200px;
 	border-radius: 5px;
 	cursor: pointer;
-/*	background: linear-gradient(to right, #4A00E0, #9D6289);*/
-	background: linear-gradient(45deg, #b24592, #f15f79);
+	background: linear-gradient(to right, #4A00E0, #9D6289);
+	/* background: linear-gradient(45deg, #b24592, #f15f79); */
 	font-size: 15px;
 	opacity: 0;
 	transition: 0.5s;
@@ -144,5 +144,4 @@
 .tut_card .tut_content .tut_button:hover
 {
 	box-shadow: ;
-	color: #fff;
 }

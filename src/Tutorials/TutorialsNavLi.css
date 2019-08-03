@@ -1,9 +1,23 @@
-/* .tut_navbar nav ul */
 .tut_tabs
 {
-	display: flex;
-	justify-content: space-around;
-/*	background: lightblue;*/
-	width: 900px;
-	box-sizing: border-box;
+	background: linear-gradient(to left, #4A00E0, #9D6289);;
+	border-radius: 30px;
+	list-style: none;
+	font-size: 1.6em;
+	color: #fff;
+	cursor: pointer;
+	transition: .5s;
+	padding: 10px 30px;
+}
+.tut_tabs:hover
+{
+	color: #fff;
+	opacity: .7;
+	transition: .8s;
+}
+
+.nav_active
+{
+	color: #fff;
+	transform: translateY(-10px) scale(1.2);
 }
