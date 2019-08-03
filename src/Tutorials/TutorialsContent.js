@@ -10,13 +10,13 @@ import axios from 'axios'
 class TutorialsContent extends Component {
   //Data
   state = {
-    cards: []
+    cards: [],
+    nav: ''
   }
 
 
   //Functions
   slide = () => {
-		// document.getElementById('main').classList.toggle('active')
     if (this.state.open) {
       this.setState({
         open: false
@@ -31,6 +31,15 @@ class TutorialsContent extends Component {
 
   componentWillMount() {
     axios.get('http://localhost:5000/api/navs').then( (res) => {
+      // console.log('NAV', res.data);
+      this.setState({
+         cards: res.data
+      })
+    }).catch( (err) => {
+      console.log('Card_Err', err);
+    })
+
+    axios.get('http://localhost:5000/api/cards').then( (res) => {
       console.log('CAARDS', res.data);
       this.setState({
          cards: res.data
@@ -38,7 +47,25 @@ class TutorialsContent extends Component {
     }).catch( (err) => {
       console.log('Card_Err', err);
     })
+
+
+    // axios.get(`http://localhost:5000/api/nav=${this.state.nav}`).then((res) => {
+    //   this.setState({
+    //     messages: res.data
+    //   })
+    // }).catch((err) => {
+    //   console.log('err', err)
+    // })
+
   }
+
+
+  getCards = (id) => {
+    this.setState({
+      nav: id
+    })
+  }
+
 
 
 
@@ -56,7 +83,7 @@ class TutorialsContent extends Component {
 
           {
             this.state.cards.map( (c) => {
-              return <TutorialCard />
+              return <TutorialCard card={c} key={c._id}  />
             })
           }
 

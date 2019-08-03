@@ -19,7 +19,7 @@ class TutorialsNavbar extends Component {
         navs: res.data
       })
       this.selectNav(res.data[0]._id)
-      console.log('res.data[0]', res.data[0])
+      // console.log('res.data[0]', res.data[0])
     }).catch( (err) => {
       console.log('Nav_Err', err);
     })

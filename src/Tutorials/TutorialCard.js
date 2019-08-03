@@ -1,25 +1,28 @@
 import React, {Component} from 'react';
 import './TutorialCard.css'
-import axios from 'axios'
+// import axios from 'axios'
 
 class TutorialCard extends Component {
   //Data
   state = {
-    cards: []
+    card: this.props.card
+    // card_name: '',
+    // mini_descr: '',
+    // full_descr: '',
+    // pic: '',
+    // vid: '',
+    // level: ''
   }
 
 
   //Functions
   componentWillMount() {
-    axios.get('http://localhost:5000/api/navs').then( (res) => {
-      console.log('CAARDS', res.data);
-      this.setState({
-         cards: res.data
-      })
-    }).catch( (err) => {
-      console.log('Card_Err', err);
-    })
+    // console.log('CARD STATE Will!', this.state);
   }
+
+
+
+
 
 
 
@@ -27,12 +30,12 @@ class TutorialCard extends Component {
     return (
       <div className="tut_card">
             <div className="tut_img_box">
-                <img className="tut_img" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1563806472/Bewerbungsfoto-Vorher-min_jicktv.jpg" alt="move" />
+                <img className="tut_img" src={this.state.card.pic} alt="move" />
             </div>
             <div className="tut_content">
-                <h3 className="tut_move_name">Jab</h3>
+                <h3 className="tut_move_name">{this.state.card.card_name}</h3>
                 <p className="tut_description">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                  {this.state.card.mini_descr}
                 </p>
 
                 <button className="tut_button">See Full Description</button>
