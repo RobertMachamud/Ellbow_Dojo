@@ -4,6 +4,7 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import axios from 'axios'
 import Sidebar from '../Sidebar'
 import Burger from '../Burger'
+import { Link } from 'react-router-dom'
 
 
 class Profile extends Component {
@@ -77,10 +78,11 @@ class Profile extends Component {
       			<span className="l_name">{this.state.user.l_name}</span>
       		</div>
 
-      		<div className="c_cross">
+      		<Link to="/"><div className="c_cross">
       			<div className="c_line c_one"></div>
       			<div className="c_line c_two"></div>
       		</div>
+        </Link>
 
       		<div className={this.state.user.gender === 'male' ? 'pic_container_m' : 'pic_container_f'}>
       		</div>
@@ -138,7 +140,11 @@ class Profile extends Component {
       					</div>
       				</div>
       			</div>
+
+            <Link to="/profile_change">
           <div title="go to Change Profile" className="to_change_profile"></div>
+          </Link>
+          
     		</div>
     	</div>
     </div>

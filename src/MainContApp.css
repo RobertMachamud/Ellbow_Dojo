@@ -1,13 +1,27 @@
 .main_container
 {
-	position: relative;
+
 	z-index: 1000;
 	width: 100%;
 	max-height: 100vh;
-	transition: .5s;
 }
 
-.main_container::before
+
+.pic_slider
+{
+	position: relative;
+	height: 100vh;
+	background: url('https://res.cloudinary.com/dxcrd5sos/image/upload/v1564253908/robert_header_Kopie_btlfad.png') no-repeat center;
+	background-size: cover;
+	z-index: 100;
+  width: 100%;
+  transition: .5s;
+  display: flex;
+  align-items: center;
+}
+
+
+.pic_slider::before
 {
 	content: '';
 	position: absolute;
@@ -17,6 +31,7 @@
 	background: url(https://res.cloudinary.com/dxcrd5sos/image/upload/v1564668637/kissclipart-mixed-martial-arts-muay-thai-boxing-stock-photogra-ed5e740d91594e71_z4urdj.png);
 	background-size: cover;
 }
+
 
 .home_txt_box
 {
@@ -50,6 +65,7 @@
   cursor: pointer;
   outline: none;
 	transition: .5s;
+	z-index: 10000;
 	box-shadow: 0px 14px 80px 0px rgba(0, 0, 0, 0.3);
 }
 .home_sparring_button:hover

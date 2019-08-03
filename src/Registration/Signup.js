@@ -3,7 +3,7 @@ import './Signup.css'
 import axios from 'axios'
 import Burger from '../Burger'
 import Sidebar from '../Sidebar'
-
+// import { Link } from 'react-router-dom'
 
 
 class Signup extends Component {
@@ -102,7 +102,7 @@ class Signup extends Component {
       console.log(this.state)
       console.log('>>>>>>>>>>>>>>>>>>',res.data.token);
       localStorage.setItem('token', res.data.token)
-      // this.props.auth()
+      this.props.auth()
     }).catch( (err) => {
       console.log('Signup_Err', err)
     })
@@ -150,6 +150,7 @@ class Signup extends Component {
       </div>
       <button onClick={this.props.changeToLogin} className="to_login">Back to Login</button>
   	</form>
+
   </div>
     )
   }
@@ -157,3 +158,5 @@ class Signup extends Component {
 }
 
 export default Signup
+
+// <div className="test"><Link to="/">test</Link></div>

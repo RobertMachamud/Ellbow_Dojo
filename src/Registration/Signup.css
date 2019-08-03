@@ -251,3 +251,13 @@ body
   left: 21%;
   z-index: 2000;
 }
+
+
+.test
+{
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}

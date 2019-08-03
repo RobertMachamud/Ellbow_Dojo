@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import Burger from './Burger'
+import Sidebar from './Sidebar'
 import './MainContApp.css'
+import { Link } from 'react-router-dom'
 
 class MainContApp extends Component {
   //Data
@@ -25,11 +27,15 @@ class MainContApp extends Component {
     }
 	}
 
+
   //Render
   render() {
     return (
-      <div id="main" className={this.state.open ? 'main_container active' : 'main_container'}>
-        <div className="pic_slider">
+      <div className={"main_container"}>
+
+        <Sidebar />
+
+        <div className={this.state.open ? 'pic_slider active' : 'pic_slider'}>
 
           <Burger slide={this.slide} open={this.state.open}/>
 
@@ -44,7 +50,7 @@ class MainContApp extends Component {
             body as a weapon.
         </div>
 
-        <div className="home_sparring_button">Start your Sparring</div>
+        <Link to="/sparring"><div className="home_sparring_button">Start your Sparring</div></Link>
 
       </div>
     )

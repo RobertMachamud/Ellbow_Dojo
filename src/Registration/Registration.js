@@ -20,21 +20,19 @@ class Registration extends Component {
 
 
   //Functions
+  checkAuth = () => {
+		if (localStorage.getItem('token')) {
+			return true
+		} else {
+			return false
+		}
+	}
 
-  // for redirecting
-  // checkAuth = () => {
-	// 	if (localStorage.getItem('token')) {
-	// 		return true
-	// 	} else {
-	// 		return false
-	// 	}
-	// }
-  // 
-	// auth = () => {
-	// 	if (this.checkAuth()) {
-	// 		window.location.href = '/'
-	// 	}
-	// }
+	auth = () => {
+		if (this.checkAuth()) {
+			window.location.href = '/'
+		}
+	}
 
 
   changeToSignup = () => {
@@ -50,8 +48,8 @@ class Registration extends Component {
     return (
       <div className="registration">
         {
-          this.state.login === true ? <Login changeToSignup={this.changeToSignup} /> :
-                                      <Signup changeToLogin={this.changeToLogin} auth={this.auth} />
+          this.state.login === true ? <Login changeToSignup={this.changeToSignup} checkAuth={this.checkAuth} auth={this.auth} /> :
+                                      <Signup changeToLogin={this.changeToLogin} checkAuth={this.checkAuth} auth={this.auth} />
         }
       </div>
     )
