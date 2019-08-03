@@ -3,7 +3,6 @@ body
 	margin: 0;
 	padding: 0;
 	font-family: sans-serif;
-  overflow: hidden;
 }
 
 
@@ -22,6 +21,7 @@ body
   background: url(https://res.cloudinary.com/dxcrd5sos/image/upload/v1564253908/robert_header_Kopie_btlfad.png);
   display: flex;
   align-items: center;
+
 }
 .active
 {
@@ -33,6 +33,7 @@ body
 	display: flex;
 	align-items: center;
 	height: 100vh;
+	overflow-x: hidden;
 }
 
 .profile_container

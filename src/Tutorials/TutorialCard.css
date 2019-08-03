@@ -1,13 +1,3 @@
-.tut_card_container
-{
-	box-sizing: border-box;
-	padding: 50px 150px;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-gap: 30px;
-}
-
-
 .tut_card
 {
 	position: relative;
