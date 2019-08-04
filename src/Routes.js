@@ -7,6 +7,7 @@ import Profile from './Profile/Profile'
 import Sparring from './Sparring/Sparring'
 import Tutorials from './Tutorials/Tutorials'
 import ProfileChange from './Profile/ProfileChange'
+import Rps from './RpsGame/Rps'
 
 class Routes extends Component {
 	// Data
@@ -41,6 +42,7 @@ class Routes extends Component {
     							this.checkAuth() ? (<ProfileChange />) : (<Redirect to="/registration" />) )} />
             <Route path="/sparring" component={() => <Sparring auth={this.auth} />} />
             <Route path="/tutorials" component={() => <Tutorials auth={this.auth} />} />
+            <Route path="/game" component={() => <Rps auth={this.auth} />} />
   					<Route path="/" render={() => (
   						     this.checkAuth() ? (<App />) : (<Redirect to="/registration" />) )} />
 				</Switch>

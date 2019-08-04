@@ -23,6 +23,7 @@ class Profile extends Component {
       total_rounds: 0,
       total_moves: 0,
       total_ellbows: 0,
+      file: null
     }
   }
 
@@ -85,6 +86,7 @@ class Profile extends Component {
         </Link>
 
       		<div className={this.state.user.gender === 'male' ? 'pic_container_m' : 'pic_container_f'}>
+            <img className="pic_container_img" alt="profile_picture" src={this.state.user.file} />
       		</div>
 
       		<div className="info_container">
@@ -144,7 +146,7 @@ class Profile extends Component {
             <Link to="/profile_change">
           <div title="go to Change Profile" className="to_change_profile"></div>
           </Link>
-          
+
     		</div>
     	</div>
     </div>

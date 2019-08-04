@@ -21,6 +21,7 @@ render() {
         <Link to="/"><li>Home</li></Link>
         <Link to="/profile"><li>Profile</li></Link>
         <Link to="/sparring"><li>Sparring</li></Link>
+        <Link to="/game"><li>Game</li></Link>
         <Link to="/tutorials"><li>Tutorials</li></Link>
         <Link to="/about_us"><li>About us</li></Link>
       </ul>

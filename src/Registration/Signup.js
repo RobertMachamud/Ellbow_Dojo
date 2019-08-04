@@ -18,7 +18,7 @@ class Signup extends Component {
     age: '',
     height: '',
     weight: '',
-    profile_pic: ''
+    file: null,
   }
 
 
@@ -85,6 +85,13 @@ class Signup extends Component {
   }
 
 
+  // File
+  addFile = (e) => {
+    this.setState({
+      file: e.target.files[0]
+    })
+  }
+
   // Signup
   // signup = (e) => {
   //   e.preventDefault()
@@ -98,7 +105,20 @@ class Signup extends Component {
 
   signup = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:5000/api/signup', this.state).then( (res) => {
+    let form_holder = new FormData()
+    console.log('formhold before', this.state);
+    form_holder.append('file', this.state.file)
+    form_holder.append('f_name', this.state.f_name)
+    form_holder.append('l_name', this.state.l_name)
+    form_holder.append('age', this.state.age)
+    form_holder.append('weight', this.state.weight)
+    form_holder.append('gender', this.state.gender)
+    form_holder.append('email', this.state.email)
+    form_holder.append('password', this.state.password)
+
+
+
+    axios.post('http://localhost:5000/api/signup', form_holder).then( (res) => {
       console.log(this.state)
       console.log('>>>>>>>>>>>>>>>>>>',res.data.token);
       localStorage.setItem('token', res.data.token)
@@ -123,6 +143,7 @@ class Signup extends Component {
     		<div className="signup_box">
     		<div className="signup_box_head">Additional Info</div>
     			<div className="signup_box_cont">
+            <input className="signup_profile_pic" type="file" onChange={(e) => this.addFile(e)} />
     				<input placeholder="Your Age"  className="inputs" type="number" min="1" max="100" title="1 - 100 please" value={this.state.age} onChange={(e) => this.changeAge(e)} />
             <input placeholder="Your Height" className="inputs" type="number" min="1" max="200" title="in cm" value={this.state.height} onChange={(e) => this.changeHeight(e)} />
             <input placeholder="Your Weight" className="inputs" type="number" min="1" max="250" title="in kg" value={this.state.weight} onChange={(e) => this.changeWeight(e)} />

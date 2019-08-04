@@ -141,6 +141,14 @@ body
 	box-shadow: 4px 13px 30px 1px rgba(0, 0, 0, 0.3);
 }
 
+.pic_container_img
+{
+	width: 100%;
+	height: 100%;
+	object-fit: scale-down;
+	border-radius: 10px;
+}
+
 .pic_container_m::before,
 .pic_container_f::before
 {
