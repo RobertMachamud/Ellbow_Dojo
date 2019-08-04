@@ -136,7 +136,7 @@ body
 	width: 40%;
 	height: 80%;
 	border-radius: 10px;
-	background: url('https://res.cloudinary.com/dxcrd5sos/image/upload/v1563806473/real-2697954_1280_z1rthq.jpg') no-repeat 70%;
+	background: rgba(0,0,0,.9);
 	background-size: cover;
 	box-shadow: 4px 13px 30px 1px rgba(0, 0, 0, 0.3);
 }
