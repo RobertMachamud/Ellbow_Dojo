@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import RpsSelect from './RpsSelect'
 import RpsGame from './RpsGame'
-import axios from 'axios'
+// import axios from 'axios'
 
 class Rps extends Component {
   //Data
@@ -17,18 +17,13 @@ class Rps extends Component {
   }
 
 
-  startRpsGame = (rounds, duration, pause) => {
+  startRpsGame = (rounds) => {
     // console.log('check', this.state);
-    axios.get(`http://localhost:5000/api/moves?rounds=${rounds}&duration=${duration * 60}`).then( (res) => {
-      // console.log('Data Game???', res);
       this.setState({
         status: 'game',
         rounds: rounds,
-      })
-    }).catch( (err) => {
-      console.log('errRps_Start', err);
-    })
-  }
+  })
+}
 
   backRpsSelect = () => {
     this.setState({
@@ -43,7 +38,7 @@ class Rps extends Component {
       <div className="main_sparring">
         {
           this.state.status === 'select' ?
-           <RpsSelect startSparring={this.startRpsGame}  /> : <RpsGame backSparrSelect={this.backRpsSelect}
+           <RpsSelect startRpsGame={this.startRpsGame}  /> : <RpsGame backSparrSelect={this.backRpsSelect}
                                                                                       rounds={this.state.rounds}
                                                                                       />
         }

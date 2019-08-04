@@ -65,7 +65,6 @@
 
 
     changeRounds = (e, val) => {
-      // console.log('val', val)
       this.setState({ rounds: val })
       // console.log(this.state.rounds);
     }
@@ -102,7 +101,8 @@
         				<h2 className="sel_rps_container_header">Choose Rounds</h2>
         				</div>
 
-        				<form className="sel_rps_slider_form">
+        				<form onSubmit={(e) => {e.preventDefault();
+                  this.props.startRpsGame(this.state.rounds);}} className="sel_rps_slider_form">
         					<div className="sel_rps_slider_container">
 
                   <PrettoSlider defaultValue={5}

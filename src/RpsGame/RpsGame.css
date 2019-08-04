@@ -1,0 +1,123 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+.active
+{
+	transform: translateX(300px);
+}
+
+.rps_game
+{
+	height: 100vh;
+  width: 100%;
+	overflow: hidden;
+}
+
+.rps_slider
+{
+  position: relative;
+	z-index: 100;
+	width: 100%;
+	height: 100vh;
+	transition: .5s;
+  background: #36393E;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.rps_red_corner,
+.rps_blue_corner
+{
+	position: absolute;
+	width: 1000px;
+	height: 110px;
+	z-index: 500;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+
+.rps_red_corner
+{
+	top: 0;
+/*	background: red;*/
+	background: linear-gradient(to right, #f00000, #dc281e);
+	border-radius: 0 0 30px 30px;
+}
+
+
+.rps_blue_corner
+{
+	bottom: 0;
+/*	background: blue;*/
+	background: linear-gradient(to right, #0575e6, #021b79);
+	border-radius: 30px 30px 0 0;
+}
+
+
+.rps_ring
+{
+/*	border: 1px solid #000;*/
+	height: 650px;
+	width: 850px;
+	background: url(https://res.cloudinary.com/dxcrd5sos/image/upload/v1564926463/kisspng-boxing-rings-muay-thai-martial-arts-sport-5af3ddf5ad5dc5.3451479715259315097101_howuj5.png) no-repeat center;
+	background-size: contain;
+	transform: translateY(10px);
+}
+
+
+
+.rps_move
+{
+	background: white;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+
+.rps_score
+{
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	border-radius: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #fff;
+	box-shadow: ;
+
+}
+
+.player
+{
+	top: 50%;
+	transform: translateY(-50%);
+	left: 100px;
+	border: 15px solid blue;
+}
+
+.comp
+{
+	top: 50%;
+	transform: translateY(-50%);
+	right: 100px;
+	border: 15px solid red;
+}
+
+.rpc_score_score
+{
+	font-size: 4em;
+}
