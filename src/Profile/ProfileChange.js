@@ -161,3 +161,16 @@ class ProfileChange extends Component {
 
 
 export default ProfileChange
+
+
+          // <div className="name_input_box">
+					// 	<div className="ch_pr_name_inputs">
+					// 	<input placeholder="Your First Name" className="ch_input" type="text" />
+					// 	<input placeholder="Your Last Name" className="ch_input" type="text" />
+					// 	</div>
+          //
+					// 	<div className="ch_pr_input_info">
+					// 	<div className="input_info_one">Age / Weight </div>
+					// 	<div className="input_info_two">Height / Gender</div>
+					// 	</div>
+					// </div>

@@ -40,7 +40,7 @@ class TutorialsContent extends Component {
     })
 
     axios.get('http://localhost:5000/api/cards').then( (res) => {
-      console.log('CAARDS', res.data);
+      // console.log('CAARDS', res.data);
       this.setState({
          cards: res.data
       })

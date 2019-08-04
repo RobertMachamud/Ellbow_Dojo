@@ -144,6 +144,40 @@ body
 }
 
 
+/* 
+.name_input_box
+{
+	align-items: center;
+	flex-direction: column;
+	justify-content: flex-end;
+	border-top-right-radius: 30px;
+
+}
+
+.ch_pr_name_inputs
+{
+	display: flex;
+}
+
+.ch_pr_input_info
+{
+	display: flex;
+	justify-content: space-around;
+	width: 875px;
+	transform: translateY(20px);
+}
+
+.input_info_one
+{
+	color: #fff;
+} */
+
+
+
+
+
+
+
 .rest_input_bx
 {
 /*	border: 1px dotted green;*/

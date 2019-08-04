@@ -134,8 +134,8 @@ class Signup extends Component {
     			<div className="signup_logo">
     				<h2 className="signup_header">Sign up</h2>
     				<div className="gender_box">
-    					<div onClick={this.changeToMale} className="gender male"></div>
-    					<div onClick={this.changeToFemale} className="gender female"></div>
+    					<div onClick={this.changeToMale} className={this.state.gender === 'male' ? 'gender male g_selected_m' : 'gender male'}></div>
+    					<div onClick={this.changeToFemale} className={this.state.gender === 'female' ? 'gender female g_selected_f' : 'gender female'}></div>
     				</div>
     			</div>
 

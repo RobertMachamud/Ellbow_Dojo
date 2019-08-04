@@ -113,11 +113,6 @@ body
 	background: url(https://res.cloudinary.com/dxcrd5sos/image/upload/v1564264100/kisspng-gender-symbol-computer-icons-male-facepalm-5b499dda966909.0917024415315511946161_ovzdew.png) no-repeat center;
 	background-size: cover;
 }
-.g_selected
-{
-  transform: scale();
-}
-
 
 .female
 {
@@ -128,9 +123,22 @@ body
 .female:hover
 {
 	box-shadow:  0px 14px 20px 1px rgba(2, 27, 121, 0.8);
-	transform: scale(1.1);
+	transform: scale(1.15);
 }
 
+.g_selected_m
+{
+  transform: scale(1.2);
+	background-color: blue;
+	box-shadow: 0px 14px 20px 1px rgba(2, 27, 121, 0.8);
+}
+
+.g_selected_f
+{
+	transform: scale(1.2);
+	background-color: pink;
+	box-shadow: 0px 14px 20px 1px rgba(2, 27, 121, 0.8);
+}
 
 
 .signup_card::before
