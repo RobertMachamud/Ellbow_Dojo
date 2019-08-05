@@ -119,7 +119,8 @@ class Signup extends Component {
 
 
     axios.post('http://localhost:5000/api/signup', form_holder).then( (res) => {
-      console.log(this.state)
+      console.log('REEES SIGNUP!!!!', res);
+      console.log('This state bef token', this.state)
       console.log('>>>>>>>>>>>>>>>>>>',res.data.token);
       localStorage.setItem('token', res.data.token)
       this.props.auth()

@@ -24,7 +24,8 @@ class ProfileChange extends Component {
     gender:  '',
     age: 0,
     height: 0,
-    weight: 0
+    weight: 0,
+    file: null
   }
 
 
@@ -56,7 +57,8 @@ class ProfileChange extends Component {
             gender:  res.data.gender,
             age: res.data.age,
             height: res.data.height,
-            weight: res.data.weight
+            weight: res.data.weight,
+            file: res.data.file
           })
         })
   }
@@ -123,7 +125,7 @@ class ProfileChange extends Component {
   			<div className="change_profile_card">
   				<div className="ch_pr_left">
   					<div className="ch_pr_left_wrapper">
-  						<div className="ch_pic"></div>
+  						<img src={this.state.file} className="ch_pic" alt="your_profile_picture" />
   						<div className="ch_pr_pic_button">Change Profile Picture</div>
   					</div>
   				</div>

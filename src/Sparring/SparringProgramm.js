@@ -5,6 +5,14 @@ import Display from './Display'
 import ReactCountdownClock from 'react-countdown-clock'
 import Sound from 'react-sound'
 
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Slide from '@material-ui/core/Slide';
+
 
 class SparringProgramm extends Component {
   //Data
@@ -25,7 +33,11 @@ class SparringProgramm extends Component {
     sound: '',
     total_rounds: 0,
     total_moves: 0,
-    reward_counter: 150
+    reward_counter: 150,
+    dialog_open: false,
+    transition: React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />
+    })
   }
 
 
@@ -265,6 +277,19 @@ class SparringProgramm extends Component {
     // console.log('finished audio');
   }
 
+  // Dialog
+  handleClickOpen =() => {
+    this.setState({
+      dialog_open: true
+    })
+  }
+
+  handleClickClose =() => {
+    this.setState({
+      dialog_open: false
+    })
+  }
+
 
 
   //Render
@@ -309,8 +334,31 @@ class SparringProgramm extends Component {
           }
 
           <button className="back">
-  					<div onClick={this.props.backSparrSelect} className="back_p">BACK</div>
+  					<div onClick={() => {this.handleClickOpen()}} className="back_p">BACK</div>
   				</button>
+          <Dialog
+             open={this.state.dialog_open}
+             TransitionComponent={this.state.transition}
+             keepMounted
+             onClose={this.handleClickClose}
+             aria-labelledby="alert-dialog-slide-title"
+             aria-describedby="alert-dialog-slide-description"
+           >
+           <DialogTitle id="alert-dialog-slide-title">{"STOP SPARRING AND RETURN TO SELECT?"}</DialogTitle>
+           <DialogContent>
+             <DialogContentText id="alert-dialog-slide-description">
+               Are you sure you want to STOP your SPARRING-PROGRAMM?
+             </DialogContentText>
+           </DialogContent>
+           <DialogActions>
+             <Button onClick={() => {this.handleClickClose(); this.props.backSparrSelect()}} color="secondary">
+               LEAVE
+             </Button>
+             <Button onClick={this.handleClickClose} color="primary">
+               STAY
+             </Button>
+           </DialogActions>
+         </Dialog>
   			</div>
 
   			<div className="sparr_disp">

@@ -176,25 +176,36 @@ body
 }
 
 
-/* .s_data_cont
+
+
+
+/* header */
+.MuiTypography-root
 {
-	font-size: 18px;
-	color: ;
+	color: purple;
+	font-size: 25px;
 }
 
 
-.s_data_span
+/* // txt */
+.MuiDialogContentText
 {
-	color: deeppink;
-	font-weight: bold;
-	margin-left: 5px;
-	font-size: 1.3em;
-} */
+	color: blue;
+	font-size: 25px;
+}
 
 
-/* .s_data
+
+/* Buttons */
+.MuiButton-label
 {
-	font-size: 2.5em;
-	color: deeppink;
-	font-weight: bold;
+	margin-right: 25px;
+	font-size: 20px;
+	z-index: 20;
+}
+
+/* .MuiTouchRipple-root
+{
+	background: red;
+	border-radius: 30px;
 } */

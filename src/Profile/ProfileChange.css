@@ -99,8 +99,7 @@ body
 	height: 330px;
 	width: 250px;
 	border-radius: 30px;
-	background: url(https://res.cloudinary.com/dxcrd5sos/image/upload/v1563806473/real-2697954_1280_z1rthq.jpg) no-repeat 75%;
-	background-size: cover;
+	object-fit: scale-down;
 }
 
 .ch_pr_left_cont
@@ -144,7 +143,7 @@ body
 }
 
 
-/* 
+/*
 .name_input_box
 {
 	align-items: center;
