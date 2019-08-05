@@ -111,7 +111,6 @@
 	left: 50%;
 	transform: translateX(-50%);
 	height: 50px;
-/*	padding: 5 10px;*/
 	width: 200px;
 	border-radius: 5px;
 	cursor: pointer;
@@ -122,6 +121,7 @@
 	transition: 0.5s;
 	color: #fff;
 	border-radius: 30px;
+	outline: none;
 }
 
 

@@ -38,7 +38,7 @@ class TutorialCard extends Component {
                   {this.state.move.mini_descr}
                 </p>
 
-                <button className="tut_button">See Full Description</button>
+                <button onClick={() => this.props.openPopup(this.state.move)} className="tut_button">See Full Description</button>
             </div>
         </div>
     )

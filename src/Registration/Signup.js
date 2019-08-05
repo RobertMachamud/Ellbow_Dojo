@@ -105,28 +105,43 @@ class Signup extends Component {
 
   signup = (e) => {
     e.preventDefault()
-    let form_holder = new FormData()
-    console.log('formhold before', this.state);
-    form_holder.append('file', this.state.file)
-    form_holder.append('f_name', this.state.f_name)
-    form_holder.append('l_name', this.state.l_name)
-    form_holder.append('age', this.state.age)
-    form_holder.append('weight', this.state.weight)
-    form_holder.append('gender', this.state.gender)
-    form_holder.append('email', this.state.email)
-    form_holder.append('password', this.state.password)
+
+    if (this.state.f_name &&
+        this.state.l_name &&
+        this.state.email &&
+        this.state.password &&
+        this.state.age &&
+        this.state.height &&
+        this.state.weight &&
+        this.state.gender &&
+        this.state.file) {
+
+      let form_holder = new FormData()
+      console.log('formhold before', this.state);
+      form_holder.append('file', this.state.file)
+      form_holder.append('f_name', this.state.f_name)
+      form_holder.append('l_name', this.state.l_name)
+      form_holder.append('age', this.state.age)
+      form_holder.append('height', this.state.height)
+      form_holder.append('weight', this.state.weight)
+      form_holder.append('gender', this.state.gender)
+      form_holder.append('email', this.state.email)
+      form_holder.append('password', this.state.password)
 
 
 
-    axios.post(`${process.env.REACT_APP_API}/api/signup`, form_holder).then( (res) => {
-      console.log('REEES SIGNUP!!!!', res);
-      // console.log('This state bef token', this.state)
-      console.log('>>>>>>>>>>>>>>>>>>',res.data.token);
-      localStorage.setItem('token', res.data.token)
-      this.props.auth()
-    }).catch( (err) => {
-      console.log('Signup_Err', err)
-    })
+      axios.post(`${process.env.REACT_APP_API}/api/signup`, form_holder).then( (res) => {
+        console.log('REEES SIGNUP!!!!', res);
+        // console.log('This state bef token', this.state)
+        console.log('>>>>>>>>>>>>>>>>>>',res.data.token);
+        localStorage.setItem('token', res.data.token)
+        this.props.auth()
+      }).catch( (err) => {
+        console.log('Signup_Err', err)
+      })
+    } else {
+      console.log('Errrrrrrrroooooorrrr:)');
+    }
   }
 
   //Render

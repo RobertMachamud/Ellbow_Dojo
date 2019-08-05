@@ -183,15 +183,16 @@ body
 	font-size: smaller;
 }
 
+.to_signup
+{
+	color: blue;
+	cursor: pointer;
+	font-size: 15px;
+}
+
+
 .login_txt
 {
 	width: 400px;
 	font-size: 1.6em;
-}
-
-a
-{
-  text-decoration: none;
-  color: blue;
-  font-size: 15px;
 }

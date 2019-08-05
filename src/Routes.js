@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom'
-// import Signup from './Signup'
 import App from './App'
 import Registration from './Registration/Registration'
 import Profile from './Profile/Profile'
@@ -40,11 +39,11 @@ class Routes extends Component {
     							this.checkAuth() ? (<Profile />) : (<Redirect to="/registration" />) )} />
             <Route path="/profile_change" render={() => (
     							this.checkAuth() ? (<ProfileChange />) : (<Redirect to="/registration" />) )} />
-            <Route path="/sparring" component={() => <Sparring auth={this.auth} />} />
+								<Route path="/sparring" render={() => (
+  						     this.checkAuth() ? (<Sparring />) : (<Redirect to="/registration" />) )} />
             <Route path="/tutorials" component={() => <Tutorials auth={this.auth} />} />
             <Route path="/game" component={() => <Rps auth={this.auth} />} />
-  					<Route path="/" render={() => (
-  						     this.checkAuth() ? (<App />) : (<Redirect to="/registration" />) )} />
+  					<Route path="/" component={() => <App auth={this.auth} />} />
 				</Switch>
 			</BrowserRouter>
 		)
@@ -52,3 +51,7 @@ class Routes extends Component {
 }
 
 export default Routes
+
+
+// <Route path="/" render={() => (
+// 			 this.checkAuth() ? (<App />) : (<Redirect to="/registration" />) )} />

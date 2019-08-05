@@ -46,7 +46,7 @@ class Login extends Component {
   login = (e) => {
     e.preventDefault()
     // console.log();
-    axios.post('http://localhost:5000/api/login', this.state).then( (res) => {
+    axios.post(`${process.env.REACT_APP_API}/login`, this.state).then( (res) => {
       if (!res.data.token) {
         this.setState({
           error: res.data
@@ -100,7 +100,7 @@ class Login extends Component {
       			<button type="submit" className="login_button">Sign in</button>
 
       			<div className="login_dont_have_account">
-      				<p className="login_p">Don't have an account? <a href="/signup">Sign up!</a></p>
+      				<p className="login_p">Don't have an account?  <span onClick={this.props.changeToSignup} className="to_signup">Sign up!</span></p>
       			</div>
       		</form>
       	</div>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './Logout.css'
+import { Link } from 'react-router-dom'
 
 
 class Logout extends Component {
@@ -10,14 +11,16 @@ class Logout extends Component {
 	// Functions
 	logout = (e) => {
 		localStorage.removeItem('token')
-		window.location.reload()
+		// window.location.reload()
 	}
 
 
 	// Render
 	render() {
 		return (
-			<button onClick={this.logout} className="logout_btn">Logout</button>
+			<Link to="/">
+				<button onClick={this.logout} className="logout_btn">Logout</button>
+			</Link>
 		)
 	}
 }

@@ -4,6 +4,7 @@ import Burger from '../Burger'
 import Sidebar from '../Sidebar'
 import TutorialCard from './TutorialCard'
 import './TutorialsContent.css'
+import TutorialsPopup from './TutorialsPopup'
 import axios from 'axios'
 
 
@@ -11,7 +12,10 @@ class TutorialsContent extends Component {
   //Data
   state = {
     moves: [],
-    category: ''
+    category: '',
+    popup: false,
+    selected_card: {},
+    card: {}
   }
 
 
@@ -40,7 +44,7 @@ class TutorialsContent extends Component {
     })
 
     axios.get(`${process.env.REACT_APP_API}/api/cards`).then( (res) => {
-      // console.log('CAARDS', res.data);
+      console.log('CAARDS', res.data);
       this.setState({
          moves: res.data
       })
@@ -48,15 +52,23 @@ class TutorialsContent extends Component {
       console.log('Card_Err', err);
     })
 
+  }
 
-    // axios.get(`http://localhost:5000/api/nav=${this.state.nav}`).then((res) => {
-    //   this.setState({
-    //     messages: res.data
-    //   })
-    // }).catch((err) => {
-    //   console.log('err', err)
-    // })
 
+  openPopup = (data) => {
+    // console.log('POPUP!!!!!!!');
+    console.log(this.state);
+    // console.log('data', data);
+    this.setState({
+      popup: true,
+      card: data
+    })
+  }
+
+  closePopup = () => {
+    this.setState({
+      popup: false
+    })
   }
 
 
@@ -90,13 +102,15 @@ class TutorialsContent extends Component {
     		<div className={this.state.open ? 'tutorials_slider active' : 'tutorials_slider'}>
         <Burger slide={this.slide} open={this.state.open}/>
 
-    			<TutorialsNavbar getCards={this.getCards} />
+          <TutorialsNavbar getCards={this.getCards} />
+
+          <TutorialsPopup closePopup={this.closePopup} popup={this.state.popup} card={this.state.card} />
 
     			<div className="tut_card_container">
 
           {
             this.state.moves.map( (m) => {
-              return <TutorialCard move={m} key={m._id}  />
+              return <TutorialCard move={m} key={m._id} openPopup={this.openPopup}  />
             })
           }
 

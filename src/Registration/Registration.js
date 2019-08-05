@@ -15,7 +15,7 @@ import './Login.css'
 class Registration extends Component {
   //Data
   state = {
-    login: false
+    signup: false
   }
 
 
@@ -35,12 +35,12 @@ class Registration extends Component {
 	}
 
 
-  changeToSignup = () => {
-    this.setState({ login: false })
+  changeToLogin = () => {
+    this.setState({ signup: false })
   }
 
-  changeToLogin = () => {
-    this.setState({ login: true })
+  changeToSignup = () => {
+    this.setState({ signup: true })
   }
 
 
@@ -48,8 +48,9 @@ class Registration extends Component {
     return (
       <div className="registration">
         {
-          this.state.login === true ? <Login changeToSignup={this.changeToSignup} checkAuth={this.checkAuth} auth={this.auth} /> :
-                                      <Signup changeToLogin={this.changeToLogin} checkAuth={this.checkAuth} auth={this.auth} />
+          this.state.signup === true ? <Signup changeToLogin={this.changeToLogin} checkAuth={this.checkAuth} auth={this.auth} /> :
+                                      <Login changeToSignup={this.changeToSignup} checkAuth={this.checkAuth} auth={this.auth} />
+
         }
       </div>
     )
