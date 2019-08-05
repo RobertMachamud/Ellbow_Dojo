@@ -5,7 +5,6 @@ import './RpsGame.css'
 
 
 class RpsGame extends Component {
-
   //Data
   state = {
     rem_rounds: this.props.rounds,
