@@ -84,8 +84,9 @@ body
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	cursor: pointer;
   object-fit: scale-down;
-
+	box-shadow: -1px 3px 20px 1px rgba(0, 0, 0, 0.6);
 }
 
 
@@ -99,9 +100,25 @@ body
 	justify-content: center;
 	align-items: center;
 	background: #fff;
-	box-shadow: ;
+	box-shadow: -1px 3px 20px 1px rgba(0, 0, 0, 0.6);
 
 }
+
+.rps_move_img,
+.rps_move_img_comp
+{
+	border-radius: 50%;
+	width: 100%;
+	heigth: 100%;
+	object-fit: scale-down;
+}
+
+.rps_move_img_comp
+{
+	/* transform: rotateY(180deg); */
+}
+
+
 
 .player
 {
@@ -122,4 +139,27 @@ body
 .rpc_score_score
 {
 	font-size: 4em;
+}
+
+.player_pos,
+.comp_pos
+{
+	height: 150px;
+	width: 150px;
+}
+
+.player_pos
+{
+	/* background: red; */
+	position: absolute;
+	top: 30%;
+	left: 37%;
+}
+
+.comp_pos
+{
+	/* background: blue; */
+	position: absolute;
+	top: 30%;
+	right: 39%;
 }
