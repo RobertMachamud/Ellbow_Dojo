@@ -136,7 +136,7 @@ body
 	width: 40%;
 	height: 80%;
 	border-radius: 10px;
-	background: rgba(0,0,0,.9);
+	background: #36393E;
 	background-size: cover;
 	box-shadow: 4px 13px 30px 1px rgba(0, 0, 0, 0.3);
 }

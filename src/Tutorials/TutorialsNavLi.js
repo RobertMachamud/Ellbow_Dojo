@@ -19,7 +19,7 @@ class TutorialsNavLi extends Component {
   render() {
     return (
       <li className={this.state.nav.active ? 'tut_tabs nav_active' : 'tut_tabs'}
-      onClick={() => this.props.selectNav(this.state.nav._id)}>{this.state.nav.name}</li>
+      onClick={() => {this.props.getCards(this.props.categoryID); this.props.selectNav(this.state.nav._id)}}>{this.state.nav.name}</li>
     )
   }
 

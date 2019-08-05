@@ -47,7 +47,7 @@ class ProfileChange extends Component {
   }
 
   getData = () => {
-    axios.get('http://localhost:5000/api/profile' ,
+    axios.get(`${process.env.REACT_APP_API}/api/profile` ,
     {headers: {
 					Authorization: `Bearer ${localStorage.getItem('token')}`
 				}}).then( (res) => {
@@ -91,7 +91,7 @@ class ProfileChange extends Component {
   changeData = (e) => {
     e.preventDefault()
     console.log('state', this.state);
-    axios.patch('http://localhost:5000/api/profile', this.state,
+    axios.patch(`${process.env.REACT_APP_API}/api/profile`, this.state,
     {headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }}).then( (res) => {

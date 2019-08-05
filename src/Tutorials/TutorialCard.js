@@ -5,7 +5,7 @@ import './TutorialCard.css'
 class TutorialCard extends Component {
   //Data
   state = {
-    card: this.props.card
+    move: this.props.move
     // card_name: '',
     // mini_descr: '',
     // full_descr: '',
@@ -30,12 +30,12 @@ class TutorialCard extends Component {
     return (
       <div className="tut_card">
             <div className="tut_img_box">
-                <img className="tut_img" src={this.state.card.pic} alt="move" />
+                <img className="tut_img" src={this.state.move.img} alt="move" />
             </div>
             <div className="tut_content">
-                <h3 className="tut_move_name">{this.state.card.card_name}</h3>
+                <h3 className="tut_move_name">{this.state.move.name}</h3>
                 <p className="tut_description">
-                  {this.state.card.mini_descr}
+                  {this.state.move.mini_descr}
                 </p>
 
                 <button className="tut_button">See Full Description</button>

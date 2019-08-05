@@ -25,7 +25,7 @@ class Profile extends Component {
 
   //Functions
   componentWillMount() {
-    axios.get('http://localhost:5000/api/profile' ,
+    axios.get(`${process.env.REACT_APP_API}/api/profile` ,
     {headers: {
 					Authorization: `Bearer ${localStorage.getItem('token')}`
 				}}).then( (res) => {

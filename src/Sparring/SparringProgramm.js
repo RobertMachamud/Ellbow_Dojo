@@ -80,7 +80,7 @@ class SparringProgramm extends Component {
 
   // Axios -> Get Totals
   getData = () => {
-    axios.get('http://localhost:5000/api/profile' ,
+    axios.get(`${process.env.REACT_APP_API}/api/profile` ,
     {headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }}).then( (res) => {
@@ -97,7 +97,7 @@ class SparringProgramm extends Component {
   // Update -> Patch  Totals
   updateTotals = (rounds, moves) => {
     // console.log('Updaaaaate', rounds, moves);
-    axios.patch('http://localhost:5000/api/profile', {
+    axios.patch(`${process.env.REACT_APP_API}/api/profile`, {
       total_rounds: this.state.total_rounds + rounds,
       total_moves: this.state.total_moves + moves
     },
@@ -118,7 +118,7 @@ class SparringProgramm extends Component {
   // Update -> Patch   total Ellbows
   updateEllbows = (ellbow) => {
     // console.log('Updaaaaate', rounds, moves);
-    axios.patch('http://localhost:5000/api/profile', {
+    axios.patch(`${process.env.REACT_APP_API}/api/profile`, {
       total_ellbows: this.state.total_ellbows + ellbow
     },
     {headers: {

@@ -211,7 +211,7 @@ class SparringProgramm extends Component {
   // }, 2000)
 
   getData = () => {
-    axios.get('http://localhost:5000/api/profile' ,
+    axios.get(`${process.env.REACT_APP_API}/api/profile` ,
     {headers: {
 					Authorization: `Bearer ${localStorage.getItem('token')}`
 				}}).then( (res) => {
@@ -250,7 +250,7 @@ class SparringProgramm extends Component {
 
   changeData = (e) => {
     e.preventDefault()
-    axios.patch('http://localhost:5000/api/profile', this.state,
+    axios.patch(`${process.env.REACT_APP_API}/api/profile`, this.state,
     {headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }}).then( (res) => {
@@ -269,7 +269,7 @@ class SparringProgramm extends Component {
 
   // params -> counters   maybe
   updateTotals = (rounds, moves) => {
-    axios.patch('http://localhost:5000/api/profile', {
+    axios.patch(`${process.env.REACT_APP_API}/api/profile`, {
       total_rounds: this.state.total_rounds + rounds,
       total_moves: this.state.total_moves + moves
     },

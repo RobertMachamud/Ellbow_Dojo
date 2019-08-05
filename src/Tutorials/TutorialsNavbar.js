@@ -7,16 +7,17 @@ import './TutorialsNavLi.css'
 class TutorialsNavbar extends Component {
   //Data
   state = {
-    navs: []
+    categories: [],
+    selectedCategory: ''
   }
 
 
   //Functions
   componentDidMount() {
-    axios.get('http://localhost:5000/api/navs').then ( (res) => {
+    axios.get(`${process.env.REACT_APP_API}/api/category`).then ( (res) => {
       res.data[0].active = true
       this.setState({
-        navs: res.data
+        categories: res.data
       })
       this.selectNav(res.data[0]._id)
       // console.log('res.data[0]', res.data[0])
@@ -26,11 +27,12 @@ class TutorialsNavbar extends Component {
   }
 
   selectNav = (id) => {
-    let navs = this.state.navs
-    navs.forEach( (n) => delete n.active)
-    let nav = navs.find( (n) => n._id === id)
-    nav.active = true
-    this.setState({ navs })
+    let categories = this.state.categories
+    categories.forEach( (c) => delete c.active)
+    let category = categories.find( (c) => c._id === id)
+    category.active = true
+    this.setState({ categories, selectedCategory: id })
+    // console.log('!!!!!!!!!!!!!!!!!!!!!', this.state.selectedCategory)
   }
 
 
@@ -40,8 +42,8 @@ class TutorialsNavbar extends Component {
         <nav>
           <ul className="tut_navbar_nav">
             {
-              this.state.navs.map( (n) => {
-                return <TutorialsNavLi nav={n} key={n._id} selectNav={this.selectNav} />
+              this.state.categories.map( (c) => {
+                return <TutorialsNavLi nav={c} key={c._id} selectNav={this.selectNav} getCards={this.props.getCards} categoryID={c._id} />
               })
             }
           </ul>

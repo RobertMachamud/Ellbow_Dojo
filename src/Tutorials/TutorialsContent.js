@@ -10,8 +10,8 @@ import axios from 'axios'
 class TutorialsContent extends Component {
   //Data
   state = {
-    cards: [],
-    nav: ''
+    moves: [],
+    category: ''
   }
 
 
@@ -30,19 +30,19 @@ class TutorialsContent extends Component {
 
 
   componentWillMount() {
-    axios.get('http://localhost:5000/api/navs').then( (res) => {
-      // console.log('NAV', res.data);
+    axios.get(`${process.env.REACT_APP_API}/api/categories`).then( (res) => {
+      // console.log('CAT', res.data);
       this.setState({
-         cards: res.data
+         move: res.data
       })
     }).catch( (err) => {
       console.log('Card_Err', err);
     })
 
-    axios.get('http://localhost:5000/api/cards').then( (res) => {
+    axios.get(`${process.env.REACT_APP_API}/api/cards`).then( (res) => {
       // console.log('CAARDS', res.data);
       this.setState({
-         cards: res.data
+         moves: res.data
       })
     }).catch( (err) => {
       console.log('Card_Err', err);
@@ -60,10 +60,23 @@ class TutorialsContent extends Component {
   }
 
 
+  getCardsForCategory = () => {
+    axios.get(`${process.env.REACT_APP_API}/api/cards?category=${this.state.category}`).then( (res) => {
+      console.log('Link Get Cat' ,`${process.env.REACT_APP_API}/api/cards?category=${this.state.category}`);
+      this.setState({
+        moves: res.data
+      })
+    }).catch( (err) => {
+      console.log('GetCardErr', err)
+    })
+  }
+
+
   getCards = (id) => {
     this.setState({
-      nav: id
-    })
+      category: id
+    }, () => this.getCardsForCategory()
+  )
   }
 
 
@@ -77,13 +90,13 @@ class TutorialsContent extends Component {
     		<div className={this.state.open ? 'tutorials_slider active' : 'tutorials_slider'}>
         <Burger slide={this.slide} open={this.state.open}/>
 
-    			<TutorialsNavbar />
+    			<TutorialsNavbar getCards={this.getCards} />
 
     			<div className="tut_card_container">
 
           {
-            this.state.cards.map( (c) => {
-              return <TutorialCard card={c} key={c._id}  />
+            this.state.moves.map( (m) => {
+              return <TutorialCard move={m} key={m._id}  />
             })
           }
 
