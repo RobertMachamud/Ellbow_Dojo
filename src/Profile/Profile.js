@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './Profile.css'
-import '@fortawesome/fontawesome-free/css/all.css'
+// import '@fortawesome/fontawesome-free/css/all.css'
 import axios from 'axios'
 import Sidebar from '../Sidebar'
 import Burger from '../Burger'
