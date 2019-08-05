@@ -2,7 +2,7 @@
   import './RpsSelect.css'
   import Slider from '@material-ui/core/Slider'
   import { withStyles } from '@material-ui/core/styles'
-  import '@fortawesome/fontawesome-free/css/all.css'
+  // import '@fortawesome/fontawesome-free/css/all.css'
   import Burger from '../Burger'
   import Sidebar from '../Sidebar'
 
