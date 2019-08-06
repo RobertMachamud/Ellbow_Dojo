@@ -8,6 +8,7 @@ class TutorialsPopup extends Component {
   //Data
   state = {
     card: this.props.card
+
   }
 
 
@@ -36,7 +37,7 @@ class TutorialsPopup extends Component {
         </div>
 
           <div className="popup_video_box">
-          <video className="video_popup" poster={this.props.card.img}
+          <video key={this.props.card.vid} className="video_popup" poster={this.props.card.img}
             controls data-setup=' {} '>
             <source src={this.props.card.vid} type="video/mp4" />
           </video>

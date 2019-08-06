@@ -17,7 +17,7 @@ class Burger extends Component {
   //Render
   render() {
     return (
-      <div id="b_wrapper" onClick={() => this.props.slide()}>
+      <div className="b_wrapper" onClick={() => this.props.slide()}>
         <div className={this.state.open ? 'circle icon close' : 'circle icon'}>
           <span className="line top"></span>
           <span className="line middle"></span>
