@@ -34,7 +34,7 @@ class TutorialsContent extends Component {
 
 
   componentWillMount() {
-    axios.get(`${process.env.REACT_APP_API}/api/categories`).then( (res) => {
+    axios.get(`${process.env.REACT_APP_API}/api/category`).then( (res) => {
       // console.log('CAT', res.data);
       this.setState({
          move: res.data
@@ -44,7 +44,7 @@ class TutorialsContent extends Component {
     })
 
     axios.get(`${process.env.REACT_APP_API}/api/cards`).then( (res) => {
-      console.log('CAARDS', res.data);
+      // console.log('CAARDS', res.data);
       this.setState({
          moves: res.data
       })
@@ -57,7 +57,6 @@ class TutorialsContent extends Component {
 
   openPopup = (data) => {
     // console.log('POPUP!!!!!!!');
-    console.log(this.state);
     // console.log('data', data);
     this.setState({
       popup: true,

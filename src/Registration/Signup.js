@@ -25,12 +25,10 @@ class Signup extends Component {
   //Functions
   slide = () => {
     if (this.state.open) {
-      console.log('it is open');
       this.setState({
         open: false
       })
     } else {
-      console.log('it is not open');
       this.setState({
         open: true
       })
@@ -131,9 +129,9 @@ class Signup extends Component {
 
 
       axios.post(`${process.env.REACT_APP_API}/api/signup`, form_holder).then( (res) => {
-        console.log('REEES SIGNUP!!!!', res);
+        // console.log('REEES SIGNUP!!!!', res);
         // console.log('This state bef token', this.state)
-        console.log('>>>>>>>>>>>>>>>>>>',res.data.token);
+        // console.log('>>>>>>>>>>>>>>>>>>',res.data.token);
         localStorage.setItem('token', res.data.token)
         this.props.auth()
       }).catch( (err) => {

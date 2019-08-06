@@ -13,7 +13,7 @@ body
 	right: 0;
 	left: 0;
 	bottom: 0;
-	background: blue;
+	background: #36393E;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
@@ -31,11 +31,11 @@ body
 
 .popup_container
 {
-	border: 1px solid #000;
+	/* border: 1px solid #000; */
 	position: relative;
 	z-index: 1000;
-	width: 1300px;
-	height: 700px;
+	width: 1200px;
+	height: 550px;
 	transition: .5s;
 	background: #fff;
 	display: flex;
@@ -43,12 +43,14 @@ body
 	align-items: center;
 	border-radius: 30px;
 	padding: 0px 50px 0px 50px;
+	/* background: url(https://res.cloudinary.com/dxcrd5sos/image/upload/v1564253908/robert_header_Kopie_btlfad.png) */
+	box-shadow: 0px 14px 80px rgba(34, 35, 58, .5);;
 }
 
 
 .popup_video_box
 {
-	border: 1px solid blue;
+	/* border: 1px solid blue; */
 	/* width: 600px;
 	height: 500px; */
 }
@@ -61,12 +63,13 @@ body
 
 .popup_content
 {
-	border: 1px solid green;
-	width: 600px;
+	/* border: 1px solid green; */
+	width: 550px;
 	height: 60%;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around
+	justify-content: space-between;
+	padding-left: 20px;
 }
 
 
@@ -78,8 +81,11 @@ body
 
 .popup_description
 {
-	font-size: 20px;
-	line-height: ;
+	font-size: 28px;
+	font-weight: 400;
+	line-height: 36px;
+	color: rgba(0,0,0,.8);
+	text-shadow: .2px .2px 3px rgba(0,0,0,.3);
 }
 
 
@@ -89,6 +95,7 @@ body
 	width: 600;
 	height: 400px;
 	border-radius: 30px;
+	outline: none
 }
 
 

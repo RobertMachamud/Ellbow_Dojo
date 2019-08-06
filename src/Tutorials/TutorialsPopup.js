@@ -13,10 +13,12 @@ class TutorialsPopup extends Component {
 
   //Functions
   componentWillMount() {
-    console.log('CARD STATE Will!', this.state);
+
   }
 
-
+  show = () => {
+    console.log('CARD STATE Will!', this.props.card.vid);
+  }
 
 
 
@@ -41,6 +43,7 @@ class TutorialsPopup extends Component {
           </div>
 
           <div className="popup_content">
+            <button onClick={this.show}></button>
 
             <div className="poput_name">{this.props.card.name}</div>
 
