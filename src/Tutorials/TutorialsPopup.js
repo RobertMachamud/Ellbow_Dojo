@@ -44,7 +44,6 @@ class TutorialsPopup extends Component {
           </div>
 
           <div className="popup_content">
-            <button onClick={this.show}></button>
 
             <div className="poput_name">{this.props.card.name}</div>
 

@@ -39,6 +39,11 @@ class MainContApp extends Component {
 
           <Burger slide={this.slide} open={this.state.open}/>
 
+          <div class="intro">
+  				   <div class="layer"></div>
+  			   </div>
+
+
         </div>
 
         <div className="home_txt_box">
