@@ -210,6 +210,7 @@ body
 	.login_card
 	{
 		background: transparent;
+		box-shadow: none;
 		/* box-sizing: border-box;
 		top: 4%;
 		height: 80%;
