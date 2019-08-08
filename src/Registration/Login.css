@@ -208,11 +208,18 @@ body
 	}
 	.login_card
 	{
-		height: 70%;
+		top: 4%;
+		height: 80%;
+		width: 80%;
+	}
+	.login_form
+	{
+		height: 100%;
+		width: 100%;
 	}
 	.login_card::before
 	{
-		height: 54%;
+		height: 50%;
 	}
 
 	.logo_header
@@ -237,15 +244,33 @@ body
 	}
 	.login_dont_have_account
 	{
-		transform: translateY(40px);
-		font-size: 1.6em;
+		transform: translateY(10px);
+		font-size: 1.2em;
 	}
+
+	.login_login_box
+	{
+		align-items: center;
+	}
+	.inputs
+	{
+		width: 80%;
+		font-size: 1.4em;
+	}
+
+	.login_forgot
+	{
+		display: hidden;
+	}
+
 	.login_button
 	{
+		width: 80%;
+		height: ;
 		background: linear-gradient(to right, #4A00E0, #0575E6);
 	}
 	.to_signup
 	{
-		font-size: 1.6em;
+		font-size: 1.4em;
 	}
 }
