@@ -15,7 +15,9 @@ class Sidebar extends Component {
 render() {
   return (
     <div className="sidebar">
-      <div className="sidebar_img"></div>
+      <div className="sidebar_img">
+        <div className="sidebar_logo"></div>
+      </div>
 
       <ul>
         <Link to="/"><li>Home</li></Link>

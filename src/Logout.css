@@ -2,7 +2,7 @@
 {
   position: absolute;
   bottom: 50px;
-  left: 50%;
+  left: 25%;
   transform: translateX(-50%);
   outline: none;
   cursor: pointer;
@@ -22,4 +22,18 @@
 {
   background: purple;
   color: #fff;
+}
+
+
+@media screen and (max-width: 740px) {
+  .logout_btn
+  {
+    color: #ee0979;
+    background: #fafafa;
+  }
+  .logout_btn:hover
+  {
+    background: #000;
+    color: #fff;
+  }
 }
