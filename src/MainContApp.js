@@ -43,20 +43,18 @@ class MainContApp extends Component {
   				   <div class="layer"></div>
   			   </div>
 
+           <div className="home_txt_box">
+               Muay Thai or Thai Boxing is the <br />
+               national sport and cultural martial art <br />
+               of Thailand. It was developed several <br />
+               hundreds of years ago as a form of <br />
+               colose-combat that utilizes the entire <br />
+               body as a weapon.
+           </div>
+
+           <Link to="/sparring"><div className="home_sparring_button">Start your Sparring</div></Link>
 
         </div>
-
-        <div className="home_txt_box">
-            Muay Thai or Thai Boxing is the <br />
-            national sport and cultural martial art <br />
-            of Thailand. It was developed several <br />
-            hundreds of years ago as a form of <br />
-            colose-combat that utilizes the entire <br />
-            body as a weapon.
-        </div>
-
-        <Link to="/sparring"><div className="home_sparring_button">Start your Sparring</div></Link>
-
       </div>
     )
   }

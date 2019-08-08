@@ -7,7 +7,7 @@
 {
 	position: fixed;
 /*	z-index: -1;*/
-	background: rgba(0,0,0,.8);
+	background: #36393E;
 	width: 300px;
 	left: 0;
 	height: 100%;
@@ -50,4 +50,24 @@
 a
 {
 	text-decoration: none;
+}
+
+@media screen and (max-width: 740px) {
+	.sidebar
+	{
+		width: 72.5%;
+		display: flex;
+		flex-direction: column;
+		background: #36393E;
+	}
+	.sidebar ul
+	{
+		/* padding-left: 20%; */
+		/* display: flex;
+		align-items: center; */
+	}
+	.sidebar ul li
+	{
+		padding: 20px 0;
+	}
 }
