@@ -109,10 +109,10 @@ body
 
 .logo_logo
 {
-  border: .5px solid #fff;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  /* border: .5px solid #fff; */
+  width: 250px;
+  height: 250px;
+	background: url(https://res.cloudinary.com/dxcrd5sos/image/upload/v1565272666/logo_robert_Kopie_2_qyz2p6.png) no-repeat center;
 }
 
 .logo_brand
@@ -195,4 +195,57 @@ body
 {
 	width: 400px;
 	font-size: 1.6em;
+}
+
+
+
+
+
+@media screen and (max-width: 740px) {
+	.login_slider
+	{
+	  background: linear-gradient(to right, #ee0979, #ff6a00);
+	}
+	.login_card
+	{
+		height: 70%;
+	}
+	.login_card::before
+	{
+		height: 54%;
+	}
+
+	.logo_header
+	{
+		display: none;
+	}
+	.logo_brand
+	{
+		transform: translateY(-25px);
+	}
+	.logo
+	{
+		/* height: 0%; */
+	}
+	.logo_logo
+	{
+		background: url(https://res.cloudinary.com/dxcrd5sos/image/upload/v1565272666/logo_robert_Kopie_2_qyz2p6.png) no-repeat center;
+	}
+	.login_txt
+	{
+		display: none;
+	}
+	.login_dont_have_account
+	{
+		transform: translateY(40px);
+		font-size: 1.6em;
+	}
+	.login_button
+	{
+		background: linear-gradient(to right, #4A00E0, #0575E6);
+	}
+	.to_signup
+	{
+		font-size: 1.6em;
+	}
 }
