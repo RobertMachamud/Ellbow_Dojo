@@ -157,7 +157,7 @@ class SelectSparring extends Component {
             </div>
 
             <div className="time_info_data">
-              <div className="i_data"><span className="i_data_span">{this.state.rounds}</span> Rounds</div>
+              <div className="i_data"><span className="i_data_span i_data_res">{this.state.rounds}</span> Rounds</div>
               <div className="i_data"><span className="i_data_span">{this.state.duration}</span> min Time</div>
               <div className="i_data"><span className="i_data_span">{this.state.pause}</span> min Break</div>
               <div className="i_data i_total"><span className="i_data_span">{(this.state.rounds * this.state.duration) + (this.state.rounds * this.state.pause)}</span> min Total Time</div>
