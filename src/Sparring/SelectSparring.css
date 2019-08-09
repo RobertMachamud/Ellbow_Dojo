@@ -263,3 +263,33 @@ body
 	font-size: 20px;
 	font-weight: bolder;
 }
+
+
+
+
+
+@media screen and (max-width: 740px) {
+	.select_sparring_slide
+	{
+		background: linear-gradient(to right, #ee0979, #ff6a00);
+	}
+	.select_sparring_slide::before
+	{
+		top: 10%;
+		left: 30%;
+		height: 28%;
+	}
+	.sel_spar_container
+	{
+		box-shadow: none;
+		background: transparent;
+	}
+	.sel_spar_container_head
+	{
+		/* background: linear-gradient(to right, #ee0979, #ff6a00); */
+	}
+	.sel_spar_container_head::before
+	{
+		background: transparent;
+	}
+}
