@@ -134,7 +134,7 @@
 	}
 	.pic_slider::before
 	{
-		height: 58%;
+		height: 54.5%;
 		width: 100%;
 		left: 0;
 		top: 15%;
@@ -152,4 +152,5 @@
 		  background: linear-gradient(to right, #232526, #414345);
 		/* background: linear-gradient(to left, #8e2de2, #4a00e0); */
 	}
+
 }
