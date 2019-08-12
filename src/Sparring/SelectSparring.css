@@ -391,6 +391,7 @@ body
 	}
 	.i_data_span
 	{
+		color: #000;
 		font-weight: bold;
 		/* font-size: 1.3em; */
 		transform: scale(1.2);
