@@ -9,8 +9,8 @@
 	font-size: 2.3em;
 	font-weight: bold;
 	font-family: ;
-	color: purple;
-	text-shadow: 1px 1px 1px #fff;
+	color: #ee0979;
+	text-shadow: 1px 1px 4px #fff;
 	text-transform: uppercase;
 }
 
@@ -30,7 +30,8 @@
 @media screen and (max-width: 740px) {
   .move_img
   {
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
   }
 }
