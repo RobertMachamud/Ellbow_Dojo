@@ -136,9 +136,9 @@ class Profile extends Component {
 
       				<div className="info_bottom_container">
       					<div className="info_bottom_sub">
-      						<div className="info_bottom"><span className="info_b_data">{this.state.user.total_rounds}</span>Total Rounds</div>
+      						<div className="info_bottom info_b_higher"><span className="info_b_data">{this.state.user.total_rounds}</span>Total Rounds</div>
       						<div className="info_bottom"><span className="info_b_data">{this.shortenData(this.state.user.total_moves)}</span>Total Moves</div>
-      						<div className="info_bottom"><span className="info_b_data">{this.state.user.total_ellbows}</span>Total Ellbows</div>
+      						<div className="info_bottom info_b_higher"><span className="info_b_data">{this.state.user.total_ellbows}</span>Total Ellbows</div>
       					</div>
       				</div>
       			</div>

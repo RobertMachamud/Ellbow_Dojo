@@ -368,3 +368,272 @@ body
 {
   transform: scale(1.16);
 }
+
+
+
+
+
+
+@media screen and (max-width: 740px) {
+	.profile_slider
+	{
+	  background: linear-gradient(to right, #ee0979, #ff6a00);
+	}
+
+
+	.profile_main_container
+	{
+		display: flex;
+		align-items: center;
+		/* height: 100%; */
+		overflow-x: hidden;
+		background: green;
+	}
+
+	.profile_container
+	{
+		position: absolute;
+		top: 0;
+		left: 0;
+		/* right: 0;
+		bottom: 0; */
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to right, #ee0979, #ff6a00);
+	}
+
+
+	.c_cross
+	{
+		display: none;
+	}
+
+
+	.name_container
+	{
+		position: absolute;
+		top: 37%;
+		left: 3%;
+		/* transform: translateX(-50%); */
+		font-size: 1.6em;
+		/* color: #ff6a00; */
+		color: #000;
+		z-index: 100000;
+	}
+	.l_name
+	{
+		padding-left: 17px;
+	}
+
+
+	.pic_container_m,
+	.pic_container_f
+	{
+		position: absolute;
+		top: 0%;
+		right: 0;
+		left: 43%;
+		width: 57%;
+		height: 40%;
+		border-radius: 0px 0px 0px 10px;
+	}
+
+	.pic_container_img
+	{
+		width: 100%;
+		height: 100%;
+		object-fit: scale-down;
+		border-radius: 0px 0px 0px 10px;
+	}
+
+	.pic_container_m::before,
+	.pic_container_f::before
+	{
+		border-radius: 0px 0px 0px 10px;
+	}
+
+
+	.info_container
+	{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		width: 100%;
+		height: 75%;
+		border-radius: 0px;
+		justify-content: flex-start;
+		background: #fafafa;
+		/* background: #36393E; */
+		box-shadow: 0px 14px 80px rgba(34, 35, 58, .8);
+	}
+
+
+	.info_head
+	{
+		/* display: none; */
+		margin-left: 15px;
+		font-size: .8em;
+		letter-spacing: 0px;
+		word-spacing: 0px;
+		/* color: #ff6a00; */
+		/* background: yellow; */
+		/* text-transform: capitalize; */
+	}
+
+
+	/*Info*/
+	/*Circle*/
+	.d_circle_container
+	{
+	  position: absolute;
+	  top: 35%;
+	  left: 30%;
+	  transform: translateX(-50%);
+	/*	border: solid 1px black;*/
+	/*	*/
+	  height: 40%;
+	  width: 60px;
+	}
+
+	.d_circle
+	{
+	  width: 25px;
+	  height: 25px;
+	  border: 1px solid rgba(0,0,0,1);
+	  background: #fff;
+	}
+	.d_circle::before
+	{
+	  background: #ee0979;
+	  opacity: .8;
+	}
+
+	.d_circle:hover
+	{
+	  color: #fff;
+	}
+
+
+	.d_circle_container::before
+	{
+	  width: 1px;
+	  height: 100%;
+	  background: rgba(0,0,0,.8);
+	}
+
+
+	.info_info_cont
+	{
+	  position: absolute;
+	  top: 35%;
+	  left: 70%;
+	  transform: translateX(-50%);
+	  height: 40%;
+	  width: 200px;
+		/* color: #ff6a00; */
+	  align-items: baseline;
+	  flex-direction: column;
+	  padding-left: 0px;
+	}
+
+	.info_info_data_container
+	{
+	  position: absolute;
+	  left: 80%;
+	  transform: translateX(-50%);
+	  top: 35%;
+	/*	border: solid 1px black;*/
+	/*	*/
+	  height: 40%;
+	  width: 116px;
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: baseline;
+	  flex-direction: column;
+	  padding-left: 0px;
+	  align-items: baseline;
+
+	  /* background: #000; */
+	}
+
+	.data_c
+	{
+		height: 30px;
+	/*	z-index: 150;*/
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.data_a
+	{
+		margin-left: 10px;
+		font-size: 20px;
+	  /* color: #ff6a00; */
+		color: #ee0979;
+	}
+
+	/*Bottom*/
+	.info_bottom_container
+	{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 51;
+		width: 100%;
+		height: 20%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: linear-gradient(to right, #ee0979, #ff6a00);
+	}
+
+	.info_bottom_sub
+	{
+		width: 85%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		/* background: green; */
+		padding-left: 30px;
+		box-sizing: border-box;
+		color: #fff;
+	}
+
+	.info_bottom
+	{
+		/* font-size: 14px; */
+		/* background: blue; */
+		transform: translateY(70%);
+		font-size: smaller;
+	}
+
+	.info_bottom.info_b_higher
+	{
+		transform: translateY(-55%);
+		/* background: purple; */
+		/* font-size: 1.1em; */
+		font-weight: bolder;
+
+		/* color: #fff; */
+	}
+
+	.info_b_data
+	{
+		font-size: 1.5em;
+		font-weight: bolder;
+		margin-right: 10px;
+		/* color: rgba(0,0,0,1); */
+		color: #fff;
+		/* background: yellow; */
+	}
+
+	.to_change_profile
+	{
+	  top: -12%;
+	  left: 10%;
+	}
+
+}
