@@ -167,3 +167,183 @@ body
 	height: 100%;
 	width: 100%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 740px) {
+	.popup
+	{
+		z-index: 15000;
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		background: #36393E;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		max-height: 100vh;
+		overflow: hidden;
+		box-sizing: border-box;
+	  display: none;
+	}
+
+	.p_open
+	{
+	  display: flex;
+	}
+
+
+	.popup_container
+	{
+		width: 100%;
+		height: 100%;
+		background: #fafafa;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		border-radius: 0px;
+		/* padding: 0px 50px 0px 50px; */
+		padding: 0px;
+		box-shadow: none;
+	}
+
+
+	.popup_video_box
+	{
+		/* border: 1px solid blue; */
+		/* width: 600px;
+		height: 500px; */
+	}
+
+	.video
+	{
+
+	}
+
+
+	.popup_content
+	{
+		background: transparent;
+		width: 100%;
+		height: 60%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around  ;
+		padding-left: 0px;
+	}
+
+
+	.poput_name
+	{
+		font-size: 1.6em;
+		text-align: center;
+		font-weight: bold;
+	}
+
+
+	.popup_description
+	{
+		font-size: 1.1em;
+		font-weight: 600;
+		line-height: 1.1em;
+		color: #000;
+		text-shadow: none;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+
+
+
+	.video_popup
+	{
+		width: 100%;
+		/* height: 50%; */
+		border-radius: 0px;
+		outline: none
+	}
+
+
+
+	/* Cross */
+	.t_cross
+	{
+		font-size: 2em;
+		position: absolute;
+		top: 2%;
+		right: 2%;
+	/*	padding: 30px 60px;*/
+		font-weight: 100;
+		cursor: pointer;
+		height: 50px;
+		width: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.t_line
+	{
+		width: 35px;
+		height: 2px;
+		background: #000;
+		/* background: #fff; */
+		border-radius: 30px;
+		position: absolute;
+	}
+
+	.t_line.t_one
+	{
+		transform: rotate(45deg);
+
+	}
+	.t_line.t_one::before
+	{
+		content: '';
+		position: absolute;
+		transform-origin: left;
+		background: crimson;
+		transition: .3s;
+		height: 0%;
+		width: 0%;
+	}
+	.t_cross:hover .t_line.t_one::before
+	{
+		height: 100%;
+		width: 100%;
+	}
+
+
+	.t_line.t_two
+	{
+		transform: rotate(-45deg);
+	}
+	.t_line.t_two::before
+	{
+		content: '';
+		position: absolute;
+		transform-origin: right;
+		background: crimson;
+		transition: .3s;
+		height: 0%;
+		width: 0%;
+	}
+	.t_cross:hover .t_line.t_two::before
+	{
+		height: 100%;
+		width: 100%;
+	}
+}

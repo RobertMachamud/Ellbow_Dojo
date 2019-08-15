@@ -21,3 +21,41 @@
 	color: #fff;
 	transform: translateY(-10px) scale(1.2);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 740px) {
+	.tut_tabs
+	{
+		color: #000;
+		background: #fff;
+		font-weight: bolder;
+		border-radius: 10px;
+		font-size: smaller;
+		padding: 5px 7px;
+		margin: 0 5px;
+	}
+	.tut_tabs:hover
+	{
+		color: #000;
+		opacity: 1;
+	}
+
+	.nav_active
+	{
+		color: #000;
+		background: #fff;
+		font-weight: bold;
+		transform: translateY(-5px) scale(1);
+	}
+}

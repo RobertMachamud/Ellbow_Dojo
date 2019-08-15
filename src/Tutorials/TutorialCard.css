@@ -135,3 +135,56 @@
 {
 	box-shadow: ;
 }
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 740px) {
+	.tut_card
+	{
+		position: relative;
+		width: 280px;
+		height: 350px;
+		background: #000;
+		box-shadow: 0 30px 30px rgba(0,0,0,0.5);
+		transition: .7s;
+		border-radius: 10px;
+	}
+	.tut_img_box
+	{
+		border-radius: 10px;
+	}
+
+	.tut_img
+	{
+		border-radius: 10px;
+	}
+	.tut_content
+	{
+		border-radius: 10px;
+	}
+	.tut_button
+	{
+		position: absolute;
+		bottom: 4%;
+		left: 50%;
+		transform: translateX(-50%);
+		height: 50px;
+		width: 200px;
+		border-radius: 5px;
+		cursor: pointer;
+		/* background: linear-gradient(to right, #4A00E0, #9D6289); */
+		background: linear-gradient(45deg, #b24592, #f15f79);
+		font-size: 15px;
+		opacity: 0;
+		transition: 0.5s;
+		color: #fff;
+		border-radius: 10px;
+		outline: none;
+	}
+}
