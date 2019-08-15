@@ -126,7 +126,7 @@ class ProfileChange extends Component {
   				<div className="ch_pr_left">
   					<div className="ch_pr_left_wrapper">
   						<img src={this.state.file} className="ch_pic" alt="your_profile_picture" />
-  						<div className="ch_pr_pic_button">Change Profile Picture</div>
+  						<div className="ch_pr_pic_button">Change Picture</div>
   					</div>
   				</div>
 
