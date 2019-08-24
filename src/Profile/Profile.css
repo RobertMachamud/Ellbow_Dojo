@@ -235,7 +235,7 @@ body
 	height: 0%;
 	width: 0%;
 	z-index: 200;
-	transition: .5s;
+	transition: .4s;
 	background: purple;
 	opacity: .8;
 	border-radius: 50%;

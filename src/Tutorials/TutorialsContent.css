@@ -79,7 +79,6 @@ body
 		width: 100%;
 		min-height: 100vh;
 		transition: .5s;
-		background: #36393E;
 		background: linear-gradient(to right, #ee0979, #ff6a00);
 	}
 	/*

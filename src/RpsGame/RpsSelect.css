@@ -27,6 +27,21 @@ body
 	transform: translateX(300px);
 }
 
+.select_rps_slider::before
+{
+	content: '';
+	position: absolute;
+	top: 0%;
+	left: 35%;
+	transform: translateX(-50%);
+	width: 50%;
+	height: 95%;
+	/* background: blue; */
+	background: url(https://res.cloudinary.com/dxcrd5sos/image/upload/v1564668607/kisspng-kickboxing-muay-thai-karate-mma-logo-5b365e2c47c2c6.4880945815302897082939_pdrdya.png);
+	background-size: cover;
+}
+
+
 
 .select_rps,
 .sel_rps_slider_container,

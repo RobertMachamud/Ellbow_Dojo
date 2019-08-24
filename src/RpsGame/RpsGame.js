@@ -17,7 +17,7 @@ class RpsGame extends Component {
 
   //Functions
   componentWillMount() {
-    console.log(this.state);
+    // console.log(this.state);
   }
 
 
@@ -35,41 +35,52 @@ class RpsGame extends Component {
     this.setState({
       computer_choice: random_pic
     })
+    // console.log('Computers choice', this.state.computer_choice);
   }
 
 
     // declare the winner
     declareWinner = (player_choice, computer_choice) => {
-      this.random_choice(this.state.rps_moves)
-      if ((player_choice ==='elbow' && computer_choice === 'punch') ||
-          (player_choice ==='elbow' && computer_choice === 'block') ||
-          (player_choice ==='punch' && computer_choice === 'block') ||
-          (player_choice ==='punch' && computer_choice === 'knee') ||
-          (player_choice ==='kick' && computer_choice === 'elbow') ||
-          (player_choice ==='kick' && computer_choice === 'punch') ||
-          (player_choice ==='block' && computer_choice === 'kick') ||
-          (player_choice ==='block' && computer_choice === 'knee') ||
-          (player_choice ==='knee' && computer_choice === 'elbow') ||
-          (player_choice ==='knee' && computer_choice === 'kick')) {
-        this.setState({
-            player_score: this.player_score + 1
-          })
-          console.log("You win!")
+      if ((player_choice === 'elbow' && computer_choice === 'punch') ||
+          (player_choice === 'elbow' && computer_choice === 'block') ||
+          (player_choice === 'punch' && computer_choice === 'block') ||
+          (player_choice === 'punch' && computer_choice === 'knee') ||
+          (player_choice === 'kick' && computer_choice === 'elbow') ||
+          (player_choice === 'kick' && computer_choice === 'punch') ||
+          (player_choice === 'block' && computer_choice === 'kick') ||
+          (player_choice === 'block' && computer_choice === 'knee') ||
+          (player_choice === 'knee' && computer_choice === 'elbow') ||
+          (player_choice === 'knee' && computer_choice === 'kick')) {
 
-      } else if ((player_choice ==='elbow' && computer_choice === 'kick') ||
-                 (player_choice ==='elbow' && computer_choice === 'knee') ||
-                 (player_choice ==='punch' && computer_choice === 'elbow') ||
-                 (player_choice ==='punch' && computer_choice === 'kick') ||
-                 (player_choice ==='kick' && computer_choice === 'block') ||
-                 (player_choice ==='kick' && computer_choice === 'knee') ||
-                 (player_choice ==='block' && computer_choice === 'elbow') ||
-                 (player_choice ==='block' && computer_choice === 'punch') ||
-                 (player_choice ==='knee' && computer_choice === 'punch') ||
-                 (player_choice ==='knee' && computer_choice === 'block')) {
-          this.setState({
-            computer_score: this.computer_score + 1
-          })
-          console.log("You loose...")
+            console.log("You win!")
+            this.setState({
+              player_score: this.state.player_score + 1,
+              rem_rounds: this.state.rem_rounds - 1
+            })
+            if (this.state.rem_rounds < 1) {
+              this.props.backRpsSelect()
+            }
+
+      } else if ((player_choice === 'elbow' && computer_choice === 'kick') ||
+                 (player_choice === 'elbow' && computer_choice === 'knee') ||
+                 (player_choice === 'punch' && computer_choice === 'elbow') ||
+                 (player_choice === 'punch' && computer_choice === 'kick') ||
+                 (player_choice === 'kick' && computer_choice === 'block') ||
+                 (player_choice === 'kick' && computer_choice === 'knee') ||
+                 (player_choice === 'block' && computer_choice === 'elbow') ||
+                 (player_choice === 'block' && computer_choice === 'punch') ||
+                 (player_choice === 'knee' && computer_choice === 'punch') ||
+                 (player_choice === 'knee' && computer_choice === 'block')) {
+
+                   console.log("You loose...")
+                   this.setState({
+                     computer_score: this.state.computer_score + 1,
+                     rem_rounds: this.state.rem_rounds - 1
+                   })
+                   if (this.state.rem_rounds < 1) {
+                     this.props.backRpsSelect()
+                   }
+
 
       } else {
         console.log("Draw")
@@ -77,33 +88,34 @@ class RpsGame extends Component {
   }
 
 
-
-
+  // Game function first
   play = () => {
     console.log('SCORE', this.state);
-    this.declare_winner(this.state.player_choice, this.state.computer_choice)
+    this.declareWinner(this.state.player_choice, this.state.computer_choice)
   }
 
-
-  game = (rounds) => {
-    this.setState({
-      rounds: this.state.rounds - 1
-    })
-
-   this.play()
-   // console.log('Player', player_score)
-   // console.log('Comp', computer_score)
- }
+ //
+ //  game = (rounds) => {
+ //    this.setState({
+ //      rounds: this.state.rounds - 1
+ //    })
+ //
+ //   this.play()
+ //   // console.log('Player', player_score)
+ //   // console.log('Comp', computer_score)
+ // }
 
 
 
 
   // Choosing your move
   chooseElbow = () => {
-    console.log(this.state);
+    console.log('Choose-state', this.state)
+    this.random_choice(this.state.rps_moves)
     this.setState({
-      player_choice: 'ellbow'
+      player_choice: 'elbow'
     })
+    console.log('Choice player', this.state.player_choice);
     this.play()
   }
 
@@ -111,7 +123,9 @@ class RpsGame extends Component {
     this.setState({
       player_choice: 'punch'
     })
-    console.log(this.state);
+    console.log('Choose-state', this.state)
+    this.random_choice(this.state.rps_moves)
+    console.log('Choice player', this.state.player_choice);
     this.play()
   }
 
@@ -120,7 +134,9 @@ class RpsGame extends Component {
     this.setState({
       player_choice: 'block'
     })
-    console.log(this.state);
+    console.log('Choose-state', this.state)
+    this.random_choice(this.state.rps_moves)
+    console.log('Choice player', this.state.player_choice);
     this.play()
   }
 
@@ -129,15 +145,19 @@ class RpsGame extends Component {
     this.setState({
       player_choice: 'kick'
     })
-    console.log(this.state);
+    console.log('Choose-state', this.state)
+    this.random_choice(this.state.rps_moves)
+    console.log('Choice player', this.state.player_choice);
     this.play()
   }
 
   chooseKnee = () => {
-    console.log(this.state);
+    console.log('Choose-state', this.state)
+    this.random_choice(this.state.rps_moves)
     this.setState({
       player_choice: 'knee'
     })
+    console.log('Choice player', this.state.player_choice);
     this.play()
   }
 
@@ -176,7 +196,7 @@ class RpsGame extends Component {
 
 			<div className="rps_ring"></div>
 
-    
+
 
 			<div onClick={this.chooseKick} className="rps_blue_corner">
 				<div className="rps_move">
@@ -195,7 +215,7 @@ class RpsGame extends Component {
           <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1565020246/muay_thai_silhouette-01_Kopie_4_u04wka.jpg" className="rps_move_img" alt="" />
         </div>
 
-				<div onClick={() => {this.chooseElbow(); this.play()}} className="rps_move">
+				<div onClick={this.chooseElbow} className="rps_move">
           <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1565020246/muay_thai_silhouette-01_Kopie_6_ezpvnr.jpg" className="rps_move_img" alt="" />
         </div>
 			</div>
@@ -232,3 +252,6 @@ class RpsGame extends Component {
 
 
 export default RpsGame
+
+
+// <div onClick={() => {this.chooseElbow(); this.play()}} className="rps_move">

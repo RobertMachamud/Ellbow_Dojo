@@ -38,7 +38,7 @@ class Rps extends Component {
       <div className="main_sparring">
         {
           this.state.status === 'select' ?
-           <RpsSelect startRpsGame={this.startRpsGame}  /> : <RpsGame backSparrSelect={this.backRpsSelect}
+           <RpsSelect startRpsGame={this.startRpsGame}  /> : <RpsGame backRpsSelect={this.backRpsSelect}
                                                                                       rounds={this.state.rounds}
                                                                                       />
         }

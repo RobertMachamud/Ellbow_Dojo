@@ -20,7 +20,8 @@
 .sidebar_img
 {
 	height: 110px;
-	background: purple;
+	/* background: purple; */
+	background: #fff;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
