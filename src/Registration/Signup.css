@@ -280,6 +280,15 @@ body
 
 
 
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 740px) {
 	.signup
 	{
@@ -358,6 +367,8 @@ body
 	.to_login_res
 	{
 		display: block;
+		outline: none;
+		border: none;
 		background: ;
 		font-size: 1.1em;
 		position: absolute;
